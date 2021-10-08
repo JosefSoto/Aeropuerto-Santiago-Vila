@@ -1,0 +1,55 @@
+:root{
+    --azul: #142B6F;
+    --amarillo:#FFD601;
+    --gris:#E1DEE6;
+
+}
+li{
+    
+}
+.fondo{
+    background-color: var(--azul);
+    width: 100%;
+    height: 100%;  
+    display: flex; 
+    padding: 1em;
+    padding-left: 0;
+    box-sizing: border-box;
+}
+nav{
+    width: 25%;
+    
+}
+.logo{
+    margin: auto;
+}
+.logo img{
+    width: 10em;
+}
+.logo h3{
+    color: white;
+}
+.icono{
+    width: 1.5em;
+}
+
+nav ul{
+    padding-left: 0;
+    
+}
+nav ul li{
+    list-style: none;
+    border: .1em solid white;
+    border-left:0em none var(--azul);
+    width: 100%;;
+    
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+.principal{
+    background-color: var(--gris);
+    
+}
