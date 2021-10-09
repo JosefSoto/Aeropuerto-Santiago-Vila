@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="Style.css">
     <title>Document</title>
 </head>
 <body>
     <div class="fondo">
+        <!--Navegador-->
         <nav>
             <div class="logo">
                 <img src="recursos/logo.png" alt="">
-                <h3>Aeropuerto <br> Santiago Vila </h3>
-                
+                <h3>Aeropuerto <br> Santiago Vila </h3>  
             </div>
-            
             <ul>
                 <li><a href="#"><img src="icons\vuelos.png" alt="" class="icono"><span>Vuelos</span></a></li>
                 <li><a href="#"><img src="icons\aerolineas.png" alt="" class="icono"><span>Aerolineas</span></a></li>
@@ -25,10 +27,11 @@
             </ul> 
         </nav>
         <div class="principal">
+            <!--Cabacera-->
             <header>
-                <h1>Administrar Itinerarios.</h1>
+                <h1>Itinerarios</h1>
                 <div class="buscador">
-                    <input type="text" placeholder="Buscar">
+                    <input type="text" placeholder="Buscar" class="campo-buscar">
                 </div>
                 <div class="datos_usuarios">
                     <a href="#"><img src="icons\actividad.png" alt="" class="icono"></a>
@@ -40,23 +43,23 @@
                             <p>Administrador</p>
                         </span>
                     </a>
-
                 </div>
             </header>
-            <section>
+            <!--Buscador y tabla de resultados-->
+            <section class="buscador-tabla">
                 <article>
                     <div class="pestanias">
-                        <a href="">Salidas</a>
                         <a href="">Llegadas</a>
+                        <a href="">Salidas</a>
                     </div>
-                    <form action="#">
-                        <label for="vuelo">vuelo</label>
-                        <input type="text" placeholder="Vuelos" id="vuelo">
-                        <input type="text" placeholder="Origen">
-                        <input type="date" placeholder="Fecha de salida">
-                        <input type="submit" value="Buscar">    
-                    </form>
-                    <table>
+                    <div class="datos-vuelos">
+                        <form action="#" >
+                            <input type="text" placeholder="Vuelos" id="vuelo">
+                            <input type="text" placeholder="Origen">
+                            <input type="date" placeholder="Fecha de salida">
+                            <input type="submit" value="Buscar" class="boton">    
+                        </form>
+                        <table class="tabla">
                         <thead>
                             <tr>
                                 <th><input type="checkbox"></th>
@@ -68,6 +71,8 @@
                                 <th>Avion</th>
                                 <th>Estado</th>
                                 <th>Sillas</th>
+                                <th></th>
+                                
                             </tr>
                         </thead>
                         <tr>
@@ -192,12 +197,15 @@
                         </tr>
 
 
-                    </table>
-                    <a href="#">Eliminar</a>
-                    <a href="#">Nuevo Registro</a>
-
+                        </table>
+                        <div class="botones-finales">
+                            <a href="#" class="boton">Eliminar</a>
+                            <a href="#" class="boton">Nuevo Registro</a>
+                        </div>
+                    </div>
                 </article>
             </section>
+
             <footer></footer>
         </div>
     </div>
