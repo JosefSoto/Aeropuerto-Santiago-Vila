@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="Style.css">
     <title>Document</title>
@@ -18,12 +15,12 @@
             <div class="logo">
                 <img src="recursos/logo.png" alt="">
                 <h3>Aeropuerto <br> Santiago Vila </h3>  
-            </div>
+            </div> 
             <ul>
-                <li><a href="#"><img src="icons\vuelos.png" alt="" class="icono"><span>Vuelos</span></a></li>
-                <li><a href="#"><img src="icons\aerolineas.png" alt="" class="icono"><span>Aerolineas</span></a></li>
-                <li><a href="#"><img src="icons\Pilotos.png" alt="" class="icono"><span>Pilotos</span> </a></li>
-                <li><a href="#"><img src="icons\aviones.png" alt="" class="icono"><span>Aviones</span> </a></li>
+                <li><a href="#" class="btn-navegador" id="nav-vuelos"><img src="icons\vuelos.png" alt="" class="icono"><span>Vuelos</span></a></li>
+                <li><a href="#" class="btn-navegador" id="nav-aerolineas"><img src="icons\aerolineas.png" alt="" class="icono"><span>Aerolineas</span></a></li>
+                <li><a href="#" class="btn-navegador" id="nav-pilotos"><img src="icons\Pilotos.png" alt="" class="icono"><span>Pilotos</span> </a></li>
+                <li><a href="#" class="btn-navegador" id="nav-aviones"><img src="icons\aviones.png" alt="" class="icono"><span>Aviones</span> </a></li>
             </ul> 
         </nav>
         <div class="principal">
@@ -47,167 +44,795 @@
             </header>
             <!--Buscador y tabla de resultados-->
             <section class="buscador-tabla">
-                <article>
+                <article id="tabla-vuelos">
                     <div class="pestanias">
                         <a href="">Llegadas</a>
                         <a href="">Salidas</a>
                     </div>
-                    <div class="datos-vuelos">
+                    <div class="datos-vuelos" id="vuelos-llegados">
                         <form action="#" >
                             <input type="text" placeholder="Vuelos" id="vuelo">
                             <input type="text" placeholder="Origen">
                             <input type="date" placeholder="Fecha de salida">
                             <input type="submit" value="Buscar" class="boton">    
                         </form>
-                        <table class="tabla">
+                        <table class="tabla" >
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox"></th>
+                                    <th>Vuelo</th>
+                                    <th>Aereolineas</th>
+                                    <th>Origen</th>
+                                    <th>Dia</th>
+                                    <th>Hora</th>
+                                    <th>Avion</th>
+                                    <th>Estado</th>
+                                    <th>Sillas</th>
+                                    <th></th>
+                                    
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt=""class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt=""class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                        </table>
+                        <div class="botones-finales">
+                            <a href="#" class="boton">Eliminar</a>
+                            <a href="#" class="boton" id="nuevo-vuelo-1">Nuevo Registro</a>
+                        </div>
+                    </div>
+                    <div class="datos-vuelos oculto" id="vuelos-salida">
+                        <form action="#" >
+                            <input type="text" placeholder="Vuelos" id="vuelo">
+                            <input type="text" placeholder="Origen">
+                            <input type="date" placeholder="Fecha de salida">
+                            <input type="submit" value="Buscar" class="boton">    
+                        </form>
+                        <table class="tabla" id="tabla-vuelos-2">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox"></th>
+                                    <th>Vuelo</th>
+                                    <th>Aereolineas</th>
+                                    <th>Destino</th>
+                                    <th>Dia</th>
+                                    <th>Hora</th>
+                                    <th>Avion</th>
+                                    <th>Estado</th>
+                                    <th>Sillas</th>
+                                    <th></th>
+                                    
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt=""class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt=""class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>AV 8575</td>
+                                <td>Latam</td>
+                                <td>Pasto</td>
+                                <td>17 mayo</td>
+                                <td>13:11</td>
+                                <td>9776</td>
+                                <td>Aterrizó</td>
+                                <td>16</td>
+                                <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            </tr>
+                        </table>
+                        <div class="botones-finales">
+                            <a href="#" class="boton">Eliminar</a>
+                            <a href="#" class="boton" id="nuevo-vuelos-2">Nuevo Registro</a>
+                        </div>
+                    </div>
+                </article>
+               
+                <div class="datos-vuelos oculto" id="tabla-aerolineas">                    
+                    <table class="tabla" >
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>                                
+                                <th>Aereolineas</th>
+                                <th>Codigo</th>                                
+                                <th>Avions</th>
+                                <th>Logo</th>
+                                <th></th>
+                                <th></th>                                
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td><input type="checkbox"></td>                            
+                            <td>Avianca</td>
+                            <td>A3V8C2</td>
+                            <td>17</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>                            
+                            <td>Avianca</td>
+                            <td>A3V8C2</td>
+                            <td>17</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>                            
+                            <td>Avianca</td>
+                            <td>A3V8C2</td>
+                            <td>17</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>                            
+                            <td>Avianca</td>
+                            <td>A3V8C2</td>
+                            <td>17</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>                            
+                            <td>Avianca</td>
+                            <td>A3V8C2</td>
+                            <td>17</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>                            
+                            <td>Avianca</td>
+                            <td>A3V8C2</td>
+                            <td>17</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>                            
+                            <td>Avianca</td>
+                            <td>A3V8C2</td>
+                            <td>17</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="botones-finales">
+                        <a href="#" class="boton">Eliminar</a>
+                        <a href="#" class="boton" id="nuevo-aerolinea">Nuevo Registro</a>
+                    </div>
+                </div> 
+
+                <div class="datos-vuelos oculto" id="tabla-pilotos">                    
+                    <table class="tabla" >
                         <thead>
                             <tr>
                                 <th><input type="checkbox"></th>
-                                <th>Vuelo</th>
-                                <th>Aereolineas</th>
-                                <th>Origen</th>
-                                <th>Dia</th>
-                                <th>Hora</th>
-                                <th>Avion</th>
-                                <th>Estado</th>
-                                <th>Sillas</th>
                                 <th></th>
-                                
+                                <th>Documento</th>
+                                <th>Nombre</th>
+                                <th>Aerolinea</th>
+                                <th>Telefono</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>AV 8575</td>
-                            <td>Latam</td>
-                            <td>Pasto</td>
-                            <td>17 mayo</td>
-                            <td>13:11</td>
-                            <td>9776</td>
-                            <td>Aterrizó</td>
-                            <td>16</td>
-                            <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons\user.png" alt="" class="icono"></a></td>
+                        
+                            <td>12345678</td>
+                            <td>Fulanito Pérez Gonzales</td>
+                            <td>Aerolinea</td>
+                            <td>3013045822</td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>AV 8575</td>
-                            <td>Latam</td>
-                            <td>Pasto</td>
-                            <td>17 mayo</td>
-                            <td>13:11</td>
-                            <td>9776</td>
-                            <td>Aterrizó</td>
-                            <td>16</td>
-                            <td><a href="#"><img src="icons\editar.png" alt=""class="icono"></a></td>
+                            <td><a href="#"><img src="icons\user.png" alt="" class="icono"></a></td>
+                        
+                            <td>12345678</td>
+                            <td>Fulanito Pérez Gonzales</td>
+                            <td>Aerolinea</td>
+                            <td>3013045822</td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>AV 8575</td>
-                            <td>Latam</td>
-                            <td>Pasto</td>
-                            <td>17 mayo</td>
-                            <td>13:11</td>
-                            <td>9776</td>
-                            <td>Aterrizó</td>
-                            <td>16</td>
-                            <td><a href="#"><img src="icons\editar.png" alt=""class="icono"></a></td>
+                            <td><a href="#"><img src="icons\user.png" alt="" class="icono"></a></td>
+                        
+                            <td>12345678</td>
+                            <td>Fulanito Pérez Gonzales</td>
+                            <td>Aerolinea</td>
+                            <td>3013045822</td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>AV 8575</td>
-                            <td>Latam</td>
-                            <td>Pasto</td>
-                            <td>17 mayo</td>
-                            <td>13:11</td>
-                            <td>9776</td>
-                            <td>Aterrizó</td>
-                            <td>16</td>
-                            <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons\user.png" alt="" class="icono"></a></td>
+                        
+                            <td>12345678</td>
+                            <td>Fulanito Pérez Gonzales</td>
+                            <td>Aerolinea</td>
+                            <td>3013045822</td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>AV 8575</td>
-                            <td>Latam</td>
-                            <td>Pasto</td>
-                            <td>17 mayo</td>
-                            <td>13:11</td>
-                            <td>9776</td>
-                            <td>Aterrizó</td>
-                            <td>16</td>
-                            <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons\user.png" alt="" class="icono"></a></td>
+                        
+                            <td>12345678</td>
+                            <td>Fulanito Pérez Gonzales</td>
+                            <td>Aerolinea</td>
+                            <td>3013045822</td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>AV 8575</td>
-                            <td>Latam</td>
-                            <td>Pasto</td>
-                            <td>17 mayo</td>
-                            <td>13:11</td>
-                            <td>9776</td>
-                            <td>Aterrizó</td>
-                            <td>16</td>
-                            <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons\user.png" alt="" class="icono"></a></td>
+                        
+                            <td>12345678</td>
+                            <td>Fulanito Pérez Gonzales</td>
+                            <td>Aerolinea</td>
+                            <td>3013045822</td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>AV 8575</td>
-                            <td>Latam</td>
-                            <td>Pasto</td>
-                            <td>17 mayo</td>
-                            <td>13:11</td>
-                            <td>9776</td>
-                            <td>Aterrizó</td>
-                            <td>16</td>
-                            <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons\user.png" alt="" class="icono"></a></td>
+                        
+                            <td>12345678</td>
+                            <td>Fulanito Pérez Gonzales</td>
+                            <td>Aerolinea</td>
+                            <td>3013045822</td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
                         </tr>
                         <tr>
                             <td><input type="checkbox"></td>
-                            <td>AV 8575</td>
-                            <td>Latam</td>
-                            <td>Pasto</td>
-                            <td>17 mayo</td>
-                            <td>13:11</td>
-                            <td>9776</td>
-                            <td>Aterrizó</td>
-                            <td>16</td>
-                            <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons\user.png" alt="" class="icono"></a></td>
+                        
+                            <td>12345678</td>
+                            <td>Fulanito Pérez Gonzales</td>
+                            <td>Aerolinea</td>
+                            <td>3013045822</td>                            
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
                         </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>AV 8575</td>
-                            <td>Latam</td>
-                            <td>Pasto</td>
-                            <td>17 mayo</td>
-                            <td>13:11</td>
-                            <td>9776</td>
-                            <td>Aterrizó</td>
-                            <td>16</td>
-                            <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>AV 8575</td>
-                            <td>Latam</td>
-                            <td>Pasto</td>
-                            <td>17 mayo</td>
-                            <td>13:11</td>
-                            <td>9776</td>
-                            <td>Aterrizó</td>
-                            <td>16</td>
-                            <td><a href="#"><img src="icons\editar.png" alt="" class="icono"></a></td>
-                        </tr>
-
-
-                        </table>
-                        <div class="botones-finales">
-                            <a href="#" class="boton">Eliminar</a>
-                            <a href="#" class="boton">Nuevo Registro</a>
-                        </div>
+                        
+                    </table>
+                    <div class="botones-finales">
+                        <a href="#" class="boton">Eliminar</a>
+                        <a href="#" class="boton" id="nuevo-pilotos">Nuevo Registro</a>
                     </div>
-                </article>
-            </section>
+                </div>
 
-            <footer></footer>
+                <div class="datos-vuelos oculto" id="tabla-aviones">                    
+                    <table class="tabla" >
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>Avion</th>
+                                <th>Modelo</th>
+                                <th>Aereolinea</th>
+                                <th>Sillas</th>
+                                <th></th>
+                                <th></th>                                
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>CA30B986</td>
+                            <td>Boeing 737</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>
+                            <td>17</td>
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>CA30B986</td>
+                            <td>Boeing 737</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>
+                            <td>17</td>
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>CA30B986</td>
+                            <td>Boeing 737</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>
+                            <td>17</td>
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>CA30B986</td>
+                            <td>Boeing 737</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>
+                            <td>17</td>
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>CA30B986</td>
+                            <td>Boeing 737</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>
+                            <td>17</td>
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>CA30B986</td>
+                            <td>Boeing 737</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>
+                            <td>17</td>
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>CA30B986</td>
+                            <td>Boeing 737</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>
+                            <td>17</td>
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>CA30B986</td>
+                            <td>Boeing 737</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>
+                            <td>17</td>
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>CA30B986</td>
+                            <td>Boeing 737</td>
+                            <td><a href="#"><img src="recursos/Aerolineas/Avianca.jpg" alt="" class="icono"></a></td>
+                            <td>17</td>
+                            <td><a href="#"><img src="icons/editar.png" alt="" class="icono"></a></td>
+                            <td><a href="#"><img src="icons/borrar.png" alt="" class="icono"></a></td>                        
+                        </tr>
+                    </table>
+                    <div class="botones-finales">
+                        <a href="#" class="boton">Eliminar</a>
+                        <a href="#" class="boton" id="nuevo-aviones">Nuevo Registro</a>
+                    </div>
+                </div>                
+            </section>
+            <!--Ventanas modales-->
+            <div class="fondo-modal">
+                <div class="modal oculto editar-vuelo">
+                    <div class="btn-equis">
+                        &times;
+                    </div>
+                    <h2>Editar Vuelo</h2>
+                    <form action="">                        
+                        <div class="modal-1">
+                            <input type="text" placeholder="Vuelo">
+                            <input type="text" placeholder="Aerolinea">
+                            <input type="text" placeholder="Destino">
+                        </div>
+                        <div class="modal-2">
+                            <input type="text" placeholder="Avion">
+                            <div class="input-pequenio">
+                                <input type="number" placeholder="Sillas">
+                                <input type="date" placeholder="Dia">
+                                <input type="time" placeholder="Hora">
+                            </div> 
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Estado">
+                        </div>
+                        <span class="botonera">
+                            <input type="button" value="Descartar" class="boton">
+                            <input type="button" value="Guardar cambios" class="boton">
+                        </span>
+                    </form>
+                </div>
+                <div class="modal oculto editar-vuelo">
+                    <div class="btn-equis">
+                        &times;
+                    </div>
+                    <h2>Nuevo Vuelo</h2>
+                    <form action="">                        
+                        <div class="modal-1">
+                            <input type="text" placeholder="Vuelo">
+                            <input type="text" placeholder="Aerolinea">
+                            <input type="text" placeholder="Destino">
+                        </div>
+                        <div class="modal-2">
+                            <input type="text" placeholder="Avion">
+                            <div class="input-pequenio">
+                                <input type="number" placeholder="Sillas">
+                                <input type="date" placeholder="Dia">
+                                <input type="time" placeholder="Hora">
+                            </div> 
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Estado">
+                        </div>
+                        <span class="botonera">
+                            <input type="button" value="Descartar" class="boton">
+                            <input type="button" value="Guardar" class="boton">
+                        </span>
+                    </form>
+                </div>
+                <div class="modal oculto">
+                    <div class="btn-equis">
+                        &times;
+                    </div>
+                    <form action="">
+                        <h2>Editar Aerolinea</h2>
+                        
+                            <input type="text" placeholder="Vuelo">
+                            <input type="text" placeholder="Aerolinea">
+                        
+                            <input type="text" placeholder="Avion">
+                            <input type="file">
+                        
+                        <span class="botonera">
+                            <input type="button" value="Descartar" class="boton">
+                            <input type="button" value="Guardar cambios" class="boton">
+                        </span>                                       
+                    </form>
+                </div>
+                <div class="modal oculto">
+                    <div class="btn-equis">
+                        &times;
+                    </div>
+                    <form action="">
+                        <h2>Nueva Aerolinea</h2>
+                        
+                            <input type="text" placeholder="Vuelo">
+                            <input type="text" placeholder="Aerolinea">
+                        
+                            <input type="text" placeholder="Avion">
+                            <input type="file" aria-label="Archivo">
+                        
+                        <span class="botonera">
+                            <input type="button" value="Descartar" class="boton">
+                            <input type="button" value="Guardar" class="boton">
+                        </span>
+                    </form>
+                </div>
+                <div class="modal oculto">
+                    <div class="btn-equis">
+                        &times;
+                    </div>
+                    <form action="">
+                        <h2>Editar Piloto</h2>
+                        <div class="modal-1">
+                            <input type="text" placeholder="Nombre">
+                            <input type="text" placeholder="Apellido">
+                        </div>
+                        <div class="modal-2">
+                            <input type="text" placeholder="Documento">
+                            <input type="text" placeholder="Telefono">
+                        </div>
+                        <div class="modal-3">
+                            <input type="text" placeholder="Aerolinea">
+                            <input type="file">
+                        </div>
+                        <span class="botonera">
+                            <input type="button" value="Descartar" class="boton">
+                            <input type="button" value="Guardar cambios" class="boton">
+                        </span> 
+                    </form>
+                </div>
+                <div class="modal oculto">
+                    <div class="btn-equis">
+                        &times;
+                    </div>
+                    <form action="">
+                        <h2>Nuevo Piloto</h2>
+                        
+                            <input type="text" placeholder="Nombre">
+                            <input type="text" placeholder="Apellido">
+                        
+                            <input type="text" placeholder="Documento">
+                            <input type="text" placeholder="Telefono">
+                        
+                            <input type="text" placeholder="Aerolinea">
+                            <input type="file">
+                        
+                        <span class="botonera">
+                            <input type="button" value="Descartar" class="boton">
+                            <input type="button" value="Guardar" class="boton">
+                        </span>
+                    </form>
+                </div>
+                <div class="modal oculto">
+                    <div class="btn-equis">
+                        &times;
+                    </div>
+                    <form action="">
+                        <h2>Editar Avión</h2>
+                        <div class="modal-1">
+                            <input type="text" placeholder="Avion">
+                            <input type="text" placeholder="Modelo">
+                        </div>
+                        <div class="modal-2">
+                            <input type="text" placeholder="Aerolinea">
+                            <input type="text" placeholder="Sillas">
+                        </div>                    
+                        <span class="botonera">
+                            <input type="button" value="Descartar" class="boton">
+                            <input type="button" value="Guardar cambios" class="boton">
+                        </span>  
+                    </form>
+                </div>
+                <div class="modal oculto">
+                    <div class="btn-equis">
+                        &times;
+                    </div>
+                    <form action="">
+                        <h2>Nuevo Avión</h2>
+                        <div class="modal-1">
+                            <input type="text" placeholder="Avion">
+                            <input type="text" placeholder="Modelo">
+                        </div>
+                        <div class="modal-2">
+                            <input type="text" placeholder="Aerolinea">
+                            <input type="text" placeholder="Sillas">
+                        </div>                    
+                        <span class="botonera">
+                            <input type="button" value="Descartar" class="boton">
+                            <input type="button" value="Guardar" class="boton">
+                        </span>
+                    </form>
+                </div>
+            </div>
+
+            <footer>
+                <p>Hecho por : &copy; Jose F Soto</p>
+            </footer>
         </div>
     </div>
+    <script src="script/controladorVentanas.js"></script>
 </body>
 </html>

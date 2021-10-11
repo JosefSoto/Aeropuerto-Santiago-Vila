@@ -1,7 +1,6 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto:wght@400;700&display=swap');
 :root{
     --azul: #0099cc;
     --amarillo:#FFD601;
@@ -15,27 +14,50 @@
 h1, h2, h3, h4{
     color: var(--oscuro);
 }
+form input{
+    border:none;
+    border-bottom:.1em solid var(--oscuro);
+}
+form input[type="file"]{
+    border:none;
+}
+.botonera{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin:2em 0;
+}
 .boton{
-    background-color: var(--azul);
+    background-color: #fff;
     border: 1px solid var(--azul);
-    padding: .2em 1em;
+    padding: .5em 2em;
     margin: .2em .5em;
-    border-radius: 1em;
+    border-radius: 5em;
     text-decoration: none;
-    color: #fff;
+    color: var(--azul);
+    cursor: pointer;
     
 }
 .boton:hover{
-    background-color: #fff;
-    color: var(--azul);
     
-    
+    background-color: var(--azul);
+    color: #fff;    
+}
+.btn-equis{    
+    position:relative;
+    font-size: 2em;
+    left: 98%;
+    cursor: pointer;
+
 }
 .campo-buscar{
     border-radius: 1em;
     padding: .2em 1em;
     border: 2px solid var(--gris);
     color: var(--gris);
+}
+.oculto{
+    display: none;
 }
 .fondo{
     background-color: var(--azul);
@@ -47,6 +69,8 @@ h1, h2, h3, h4{
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+
+/* =======================navegador====================== */
 nav{
     width: 25%;
     max-width: 15em;
@@ -74,22 +98,20 @@ nav ul{
 }
 nav ul li{
     list-style: none;
-    border-bottom: 1px solid white;
+    
     border-left:0em none var(--azul);
     width: 100%;;
     
     
 }
-nav ul li:first-child{
-    border-top: 1px solid white;
-}
+
 nav ul li a{
     text-decoration: none;
     color: white;
     font-size: 1.2em;
     font-weight: bold;
     display: flex;
-    margin: auto;
+    margin: .5em auto;
     align-items: center;
     text-align:center;
     padding: .3em;
@@ -106,6 +128,7 @@ nav ul li a span{
     border-radius: 1em;
   
 }
+/* =======================Cabecera====================== */
 header{
     display: flex;
     justify-content:space-between;
@@ -153,6 +176,7 @@ header .datos_usuarios a{
     margin: 0;
     font-size: smaller;
 }
+/* =======================Seccion principal====================== */
 .buscador-tabla{
     
     width: 95%;
@@ -182,6 +206,7 @@ header .datos_usuarios a{
 .datos-vuelos form{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin-bottom: 1em;
 }
 .tabla{
@@ -189,6 +214,9 @@ header .datos_usuarios a{
     width: 100%;
     padding: 1em;
     border-bottom: var(--azul);
+    font-size: .9em;
+    
+
 }
 
 .tabla thead tr{
@@ -209,8 +237,75 @@ header .datos_usuarios a{
 .tabla tr:nth-child(even){
     background-color: var(--gris);
 }
+.tabla tr:last-of-type{
+    border-bottom: .1em solid var(--azul);
+}
 .botones-finales{
     display: flex;
     justify-content: right;
     padding: .5em;   
+}
+
+/* =======================Pie de Pagina====================== */
+footer{
+    display: flex;
+    justify-content: right;
+}
+footer p {
+    padding-right:  2em;
+    font-size: .8em;
+    color: #bbb;
+
+}
+/* =======================Modal====================== */
+.fondo-modal{
+    background-color: rgba(4, 4, 4, .3);;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; 
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    
+    
+}
+.modal{
+    max-width: 50%;
+    background-color: white;
+    padding: 0 2em;
+    margin: auto;
+    
+}
+.modal h2{
+    margin-top:0 ;
+    padding: .5em;
+    border-bottom: .1em solid var(--azul);
+}
+.modal form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.modal form div{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal form input{
+    margin: 1em;
+    
+}
+
+.input-pequenio{
+    display: flex;
+    justify-content: space-between;
+}
+.input-pequenio input{
+    max-width: 8em;
+    margin-left: 1em;
 }
