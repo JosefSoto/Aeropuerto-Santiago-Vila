@@ -1,3 +1,4 @@
+const $botonesNav = document.querySelectorAll(".btn-navegador")
 const $ventanaTabla = document.querySelectorAll(".datos-vuelos")
 const $ventanasModales = document.querySelectorAll(".modal")
 const $modalNuevoVuelo = document.getElementById("nuevo-vuelo-1")
@@ -6,24 +7,32 @@ const $fondoModal = document.querySelector(".fondo-modal")
 document.getElementById("nav-vuelos").addEventListener("click", function( event ) {
     $ventanaTabla.forEach(tabla=>tabla.classList.add("oculto"))
     $ventanaTabla[0].classList.remove("oculto")
+    $botonesNav.forEach($boton=>$boton.classList.remove('btn-navegador-activo'))
+    $botonesNav[0].classList.add('btn-navegador-activo')
   }, false);
 
   document.getElementById("nav-aerolineas").addEventListener("click", function( event ) {
     $ventanaTabla.forEach(tabla=>tabla.classList.add("oculto"))
     document.getElementsByClassName('pestanias')[0].classList.add("oculto")
     $ventanaTabla[2].classList.remove("oculto")
+    $botonesNav.forEach($boton=>$boton.classList.remove('btn-navegador-activo'))
+    $botonesNav[1].classList.add('btn-navegador-activo')
   }, false);
 
   document.getElementById("nav-pilotos").addEventListener("click", function( event ) {
     $ventanaTabla.forEach(tabla=>tabla.classList.add("oculto"))
     document.getElementsByClassName('pestanias')[0].classList.add("oculto")
     $ventanaTabla[3].classList.remove("oculto")
+    $botonesNav.forEach($boton=>$boton.classList.remove('btn-navegador-activo'))
+    $botonesNav[2].classList.add('btn-navegador-activo')
   }, false);
 
   document.getElementById("nav-aviones").addEventListener("click", function( event ) {
     $ventanaTabla.forEach(tabla=>tabla.classList.add("oculto"))
     document.getElementsByClassName('pestanias')[0].classList.add("oculto")
     $ventanaTabla[4].classList.remove("oculto")
+    $botonesNav.forEach($boton=>$boton.classList.remove('btn-navegador-activo'))
+    $botonesNav[3].classList.add('btn-navegador-activo')
   }, false);
 
   //-------------------------------ventana modales-----------------------------------
@@ -59,5 +68,6 @@ document.getElementById("nav-vuelos").addEventListener("click", function( event 
         $fondoModal.style.visibility = "hidden";
     })
   })
+  
 
   

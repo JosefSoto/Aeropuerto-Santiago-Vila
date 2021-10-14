@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto:wght@400;700&display=swap');
+:root{
+    --azul: #0099cc;
+    --amarillo:#FFD601;
+    --gris:#eee;
+    --oscuro:#444;
+    --roboto:'Roboto';
+    --quicksand:'Quicksand';
+}
+.fondo{
+    position: absolute;
+    display: flex;
+    background-image: radial-gradient(circle, #79ceb8, #5baba7, #488990, #3c6775, #314855);
+    min-width: 100vw;
+    min-height: 100vh;
+    padding: 0 1em;
+    font-family: 'Roboto', sans-serif;    
+    box-sizing: border-box;
+}
+.contenedor{
+    background-color: white;
+    display: flex;
+    justify-content:space-around;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    padding-top:1em ;
+    border-radius: 1em;
+       
+}
+h2{
+    border-bottom: .1em solid var(--azul);
+    font-size: 2em;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+a{
+    color: var(--oscuro);
+}
+form input{
+    background-color:inherit;
+    border:none;
+    border-bottom:.1em solid var(--oscuro);
+    margin: 1em .5em;
+}
+form input[type="button"], input[type="submit"]{
+    background-color: var(--azul);
+    border: 1px solid var(--azul);
+    padding: .5em 2em;
+    margin: .6em 1em;
+    border-radius: 5em;
+    text-decoration: none;
+    color:var(--gris);
+    cursor: pointer;
+    
+}
+form input[type="button"]:hover, input[type="submit"]:hover{  
+    -webkit-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
+    -moz-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
+    box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
+}
+
+/* =======================Login====================== */
+.login{
+    width: 45%; 
+}
+
+.login form{
+    text-align: center;
+}
+
+.login input{
+    margin: 2em;
+}
+.login form div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.login form div input{
+    margin-bottom: .2em;
+    margin-top: 3em;
+}
+/* =======================Register====================== */
+.register{
+    width: 45%;
+}
+
+.register form{
+    padding: 2em 0;
+    padding-top: 0;
+}
+.register input[type="submit"]{
+    margin: 2em 0;
+}
+.botones{
+    display: flex;
+    justify-content: center;
+}
+.botones input{
+    width: 10em;
+}
+.textos input{
+    width: 45%;
+}
+/* =======================Bienvenida====================== */
+.bienvenida{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    background-color: var(--azul);
+    height: 100%;
+    text-align: center;
+    border-radius:0 1em 1em 0;
+    
+}

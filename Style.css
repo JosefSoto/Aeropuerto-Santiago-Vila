@@ -29,14 +29,16 @@ form input[type="file"]{
 }
 .boton{
     background-color: #fff;
-    border: 1px solid var(--azul);
+    border: 1px solid var(--gris);
     padding: .5em 2em;
     margin: .2em .5em;
     border-radius: 5em;
     text-decoration: none;
     color: var(--azul);
     cursor: pointer;
-    
+    -webkit-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
+-moz-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
+box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
 }
 .boton:hover{
     
@@ -46,7 +48,7 @@ form input[type="file"]{
 .btn-equis{    
     position:relative;
     font-size: 2em;
-    left: 98%;
+    left: 100ba%;
     cursor: pointer;
 
 }
@@ -101,6 +103,7 @@ nav ul li{
     
     border-left:0em none var(--azul);
     width: 100%;;
+    padding-left: 1.5em;
     
     
 }
@@ -111,11 +114,24 @@ nav ul li a{
     font-size: 1.2em;
     font-weight: bold;
     display: flex;
-    margin: .5em auto;
+    margin: 0 auto;
     align-items: center;
     text-align:center;
-    padding: .3em;
-    
+    padding: .3em;   
+}
+
+.btn-navegador-activo{
+    background-color: var(--gris);
+    color:var(--oscuro);
+    border-radius: 2em;
+    -webkit-box-shadow: inset 3px -3px 3px 1px rgba(34,34,34,0.2);
+-moz-box-shadow: inset 3px -3px 3px 1px rgba(34,34,34,0.2);
+box-shadow: inset 3px -3px 3px 1px rgba(34,34,34,0.2);
+}
+
+.btn-proximo-inferior{
+    background-color: #444;
+    border-radius: 2em;
 }
 
 nav ul li a span{
@@ -183,13 +199,6 @@ header .datos_usuarios a{
     margin: 1em auto;
     padding: 1em;
 }
-.buscador-tabla div{
-    
-    
-}
-.pestanias{
-
-}
 .pestanias a{
     background-color: white;
     padding: 1em;
@@ -202,6 +211,9 @@ header .datos_usuarios a{
     background-color: white;
     border-radius: .5em;
     padding: 1em .5em;
+    -webkit-box-shadow: 4px 4px 3px 1px rgba(34,34,34,0.2);
+    -moz-box-shadow: 4px 4px 3px 1px rgba(34,34,34,0.2);
+    box-shadow: 4px 4px 3px 1px rgba(34,34,34,0.2);
 }
 .datos-vuelos form{
     display: flex;
@@ -215,10 +227,7 @@ header .datos_usuarios a{
     padding: 1em;
     border-bottom: var(--azul);
     font-size: .9em;
-    
-
 }
-
 .tabla thead tr{
     text-align: center;
     font-weight: bold;
