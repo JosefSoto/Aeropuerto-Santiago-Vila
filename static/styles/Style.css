@@ -2,17 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto:wght@400;700&display=swap');
 :root{
-    --azul: #0099cc;
-    --amarillo:#FFD601;
-    --gris:#eee;
+    --azul: #2ec4b6;
+    --turqui:#011627;
+    --amarillo:#fca311;
+    --naranja:#ff9f1c;
+    --rojo:#e71d36;
+    --blanco:#fdfffc;
+    --gris:#e5e5e5;
     --oscuro:#444;
-
     --roboto:'Roboto';
     --quicksand:'Quicksand';
-
 }
 h1, h2, h3, h4{
-    color: var(--oscuro);
+    color: var(--turqui);
 }
 form input{
     border:none;
@@ -29,28 +31,28 @@ form input[type="file"]{
 }
 .boton{
     background-color: #fff;
-    border: 1px solid var(--gris);
+    border: 2px solid var(--turqui);
     padding: .5em 2em;
     margin: .2em .5em;
     border-radius: 5em;
     text-decoration: none;
-    color: var(--azul);
+    color: var(--turqui);
     cursor: pointer;
-    -webkit-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
--moz-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
+    
 }
 .boton:hover{
-    
-    background-color: var(--azul);
-    color: #fff;    
+    background-color: var(--turqui);
+    color: #fff;  
+    -webkit-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
+    -moz-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
+    box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);  
 }
 .btn-equis{    
-    position:relative;
+    position:absolute;
     font-size: 2em;
-    left: 100ba%;
+    top: .2em;
+    left: 93%;
     cursor: pointer;
-
 }
 .campo-buscar{
     border-radius: 1em;
@@ -62,7 +64,7 @@ box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
     display: none;
 }
 .fondo{
-    background-color: var(--azul);
+    background-color: var(--turqui);
     width: 100%;
     min-height: 100vh;  
     display: flex; 
@@ -76,7 +78,6 @@ box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
 nav{
     width: 25%;
     max-width: 15em;
-    
 }
 .logo{
     margin: auto;
@@ -93,21 +94,15 @@ nav{
 .icono{
     width: 1.5em;
 }
-
 nav ul{
-    padding-left: 0;
-    
+    padding-left: 0;   
 }
 nav ul li{
     list-style: none;
-    
     border-left:0em none var(--azul);
     width: 100%;;
     padding-left: 1.5em;
-    
-    
 }
-
 nav ul li a{
     text-decoration: none;
     color: white;
@@ -117,32 +112,27 @@ nav ul li a{
     margin: 0 auto;
     align-items: center;
     text-align:center;
-    padding: .3em;   
+    padding: .5em .3em;   
 }
-
 .btn-navegador-activo{
     background-color: var(--gris);
     color:var(--oscuro);
     border-radius: 2em;
     -webkit-box-shadow: inset 3px -3px 3px 1px rgba(34,34,34,0.2);
--moz-box-shadow: inset 3px -3px 3px 1px rgba(34,34,34,0.2);
-box-shadow: inset 3px -3px 3px 1px rgba(34,34,34,0.2);
+    -moz-box-shadow: inset 3px -3px 3px 1px rgba(34,34,34,0.2);
+    box-shadow: inset 3px -3px 3px 1px rgba(34,34,34,0.2);
 }
-
 .btn-proximo-inferior{
     background-color: #444;
     border-radius: 2em;
 }
-
 nav ul li a span{
-    margin-left: 1em;
-    
+    margin-left: 1em;   
 }
 .principal{
     background-color: var(--gris);
     min-width: 85%;
     border-radius: 1em;
-  
 }
 /* =======================Cabecera====================== */
 header{
@@ -162,15 +152,12 @@ header .datos_usuarios{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-
 header .datos_usuarios a{
     margin-right: 2em;
 }
 .user{
-    text-decoration: none;
-    
+    text-decoration: none;  
 }
 .datos_usuarios .user{
     display: flex;
@@ -181,7 +168,6 @@ header .datos_usuarios a{
     border: 1px solid black;
     border-radius: 50%;
     margin-right: .5em;
-
 }
 .user span h4{
     color: black;
@@ -193,14 +179,14 @@ header .datos_usuarios a{
     font-size: smaller;
 }
 /* =======================Seccion principal====================== */
+
 .buscador-tabla{
-    
     width: 95%;
     margin: 1em auto;
     padding: 1em;
 }
 .pestanias a{
-    background-color: white;
+    background-color: var(--blanco);
     padding: 1em;
     border-top-left-radius: 1.5em;
     text-decoration: none;
@@ -208,7 +194,7 @@ header .datos_usuarios a{
     font-weight: bold;
 }
 .datos-vuelos{
-    background-color: white;
+    background-color: var(--blanco);
     border-radius: .5em;
     padding: 1em .5em;
     -webkit-box-shadow: 4px 4px 3px 1px rgba(34,34,34,0.2);
@@ -233,9 +219,10 @@ header .datos_usuarios a{
     font-weight: bold;
     height: 3em;
     width: 100%;
-    background-color: var(--azul);
+    background-color: var(--naranja);
     color:  #ffffff;
     border-radius: 1em 1em 0 0;
+    
 }
 .tabla td{
     padding: .5em;
@@ -247,7 +234,7 @@ header .datos_usuarios a{
     background-color: var(--gris);
 }
 .tabla tr:last-of-type{
-    border-bottom: .1em solid var(--azul);
+    border-bottom: .1em solid var(--turqui);
 }
 .botones-finales{
     display: flex;
@@ -256,6 +243,7 @@ header .datos_usuarios a{
 }
 
 /* =======================Pie de Pagina====================== */
+
 footer{
     display: flex;
     justify-content: right;
@@ -264,9 +252,9 @@ footer p {
     padding-right:  2em;
     font-size: .8em;
     color: #bbb;
-
 }
 /* =======================Modal====================== */
+
 .fondo-modal{
     background-color: rgba(4, 4, 4, .3);;
     position: fixed;
@@ -278,18 +266,16 @@ footer p {
     justify-content: center;
     align-items: center;
     visibility: hidden;
-    
-    
 }
 .modal{
     max-width: 50%;
     background-color: white;
     padding: 0 2em;
     margin: auto;
-    
+    border-radius: 1.5em;
+    position: relative;
 }
 .modal h2{
-    margin-top:0 ;
     padding: .5em;
     border-bottom: .1em solid var(--azul);
 }
@@ -299,22 +285,12 @@ footer p {
     justify-content: center;
 }
 .modal form div{
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .modal form input{
-    margin: 1em;
-    
+    margin: 1em; 
 }
 
-.input-pequenio{
-    display: flex;
-    justify-content: space-between;
-}
-.input-pequenio input{
-    max-width: 8em;
-    margin-left: 1em;
-}
+

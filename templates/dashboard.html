@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="../static/styles/normalize.css">
+    <link rel="stylesheet" href="../static/styles/Style.css">
     <title>Administrador</title>
 </head>
 <body>
@@ -51,6 +51,7 @@
                     </div>
                     <div class="datos-vuelos" id="vuelos-llegados">
                         <form action="#" >
+                            <h4>Buscar vuelo:</h4>
                             <input type="text" placeholder="Vuelos" id="vuelo">
                             <input type="text" placeholder="Origen">
                             <input type="date" placeholder="Fecha de salida">
@@ -61,7 +62,7 @@
                                 <tr>
                                     <th><input type="checkbox"></th>
                                     <th>Vuelo</th>
-                                    <th>Aereolineas</th>
+                                    <th>Aerolineas</th>
                                     <th>Origen</th>
                                     <th>Dia</th>
                                     <th>Hora</th>
@@ -354,9 +355,9 @@
                         <thead>
                             <tr>
                                 <th><input type="checkbox"></th>                                
-                                <th>Aereolineas</th>
+                                <th>Nombre</th>
                                 <th>Codigo</th>                                
-                                <th>Avions</th>
+                                <th>Aviones</th>
                                 <th>Logo</th>
                                 <th></th>
                                 <th></th>                                
@@ -644,7 +645,7 @@
                     </div>
                 </div>                
             </section>
-            <!--Ventanas modales-->
+<!--################################# Ventanas modales ###########################-->
             <div class="fondo-modal">
                 <div class="modal oculto editar-vuelo">
                     <div class="btn-equis">
@@ -681,18 +682,17 @@
                     <h2>Nuevo Vuelo</h2>
                     <form action="">                        
                         <div class="modal-1">
-                            <input type="text" placeholder="Vuelo">
-                            <input type="text" placeholder="Aerolinea">
+                            <input type="text" placeholder="Vuelo">                            
                             <input type="text" placeholder="Destino">
                         </div>
                         <div class="modal-2">
+                            <input type="text" placeholder="Aerolinea">
                             <input type="text" placeholder="Avion">
-                            <div class="input-pequenio">
-                                <input type="number" placeholder="Sillas">
+                        </div>
+                        <div>                                
                                 <input type="date" placeholder="Dia">
                                 <input type="time" placeholder="Hora">
-                            </div> 
-                        </div>
+                        </div>                        
                         <div>
                             <input type="text" placeholder="Estado">
                         </div>
@@ -708,13 +708,10 @@
                     </div>
                     <form action="">
                         <h2>Editar Aerolinea</h2>
-                        
-                            <input type="text" placeholder="Vuelo">
-                            <input type="text" placeholder="Aerolinea">
-                        
-                            <input type="text" placeholder="Avion">
-                            <input type="file">
-                        
+                        <input type="text" placeholder="Nombre">
+                        <input type="text" placeholder="Codigo">
+                        <input type="text" placeholder="Aviones">
+                        <input type="file" aria-label="Archivo">
                         <span class="botonera">
                             <input type="button" value="Descartar" class="boton">
                             <input type="button" value="Guardar cambios" class="boton">
@@ -727,13 +724,10 @@
                     </div>
                     <form action="">
                         <h2>Nueva Aerolinea</h2>
-                        
-                            <input type="text" placeholder="Vuelo">
-                            <input type="text" placeholder="Aerolinea">
-                        
-                            <input type="text" placeholder="Avion">
-                            <input type="file" aria-label="Archivo">
-                        
+                        <input type="text" placeholder="Nombre">
+                        <input type="text" placeholder="Codigo">
+                        <input type="text" placeholder="Aviones">
+                        <input type="file" aria-label="Archivo">
                         <span class="botonera">
                             <input type="button" value="Descartar" class="boton">
                             <input type="button" value="Guardar" class="boton">
@@ -770,12 +764,19 @@
                     </div>
                     <form action="">
                         <h2>Nuevo Piloto</h2>
+                            <div>
+                                <input type="text" placeholder="Nombre">
+                                <input type="text" placeholder="Apellido">
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Documento">
+                                <input type="text" placeholder="Telefono">
+                            </div>
+                            
                         
-                            <input type="text" placeholder="Nombre">
-                            <input type="text" placeholder="Apellido">
+                            
                         
-                            <input type="text" placeholder="Documento">
-                            <input type="text" placeholder="Telefono">
+                            
                         
                             <input type="text" placeholder="Aerolinea">
                             <input type="file">
@@ -833,6 +834,6 @@
             </footer>
         </div>
     </div>
-    <script src="script/controladorVentanas.js"></script>
+    <script src="../static/script/controladorVentanas.js"></script>
 </body>
 </html>
