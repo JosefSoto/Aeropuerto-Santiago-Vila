@@ -3,5 +3,4 @@ document.querySelectorAll('.conmutador').forEach(item=> {
         document.querySelector('.bienvenida').classList.toggle('derecha')
         document.querySelector('.bienvenida').classList.toggle('izquierda')
     })
-
 })

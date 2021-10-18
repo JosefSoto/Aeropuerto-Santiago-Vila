@@ -101,8 +101,7 @@ form{
 /* =======================Bienvenida====================== */
 .bienvenida{
     position: absolute;
-    top: 0;
-    
+    top: 0;    
     width: 50%;
     background-color: var(--azul);
     height: 100%;
@@ -115,6 +114,7 @@ form{
     left: 50%;
     animation-name: derecha;
     animation-duration: .5s;
+    
 }
 .izquierda{
     border-radius: 1em 0 0 1em;

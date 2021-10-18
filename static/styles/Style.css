@@ -41,7 +41,7 @@ form input[type="file"]{
     
 }
 .boton:hover{
-    background-color: var(--turqui);
+    background-color: var(--naranja);
     color: #fff;  
     -webkit-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
     -moz-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
@@ -183,11 +183,12 @@ header .datos_usuarios a{
 .buscador-tabla{
     width: 95%;
     margin: 1em auto;
-    padding: 1em;
+    padding: .5em;
+    
 }
 .pestanias a{
     background-color: var(--blanco);
-    padding: 1em;
+    padding: .8em;
     border-top-left-radius: 1.5em;
     text-decoration: none;
     color: black;
@@ -196,7 +197,7 @@ header .datos_usuarios a{
 .datos-vuelos{
     background-color: var(--blanco);
     border-radius: .5em;
-    padding: 1em .5em;
+    padding: 0 .5em;
     -webkit-box-shadow: 4px 4px 3px 1px rgba(34,34,34,0.2);
     -moz-box-shadow: 4px 4px 3px 1px rgba(34,34,34,0.2);
     box-shadow: 4px 4px 3px 1px rgba(34,34,34,0.2);
@@ -205,7 +206,7 @@ header .datos_usuarios a{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 1em;
+    margin-bottom: ;
 }
 .tabla{
     border-collapse: collapse;
@@ -228,13 +229,21 @@ header .datos_usuarios a{
     padding: .5em;
 }
 .tabla tr{
-    text-align: center;   
+    text-align: center;
+    
+
+}
+.tabla thead {
+    border:.15em solid var(--turqui);   
+    border-left: 0 none;
+    border-right: 0 none;
+
 }
 .tabla tr:nth-child(even){
     background-color: var(--gris);
 }
 .tabla tr:last-of-type{
-    border-bottom: .1em solid var(--turqui);
+    border-bottom: .15em solid var(--turqui);
 }
 .botones-finales{
     display: flex;
