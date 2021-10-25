@@ -36,6 +36,7 @@ h2{
 form{
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 a{
     color: var(--oscuro);
@@ -65,9 +66,6 @@ form input[type="button"]:hover, input[type="submit"]:hover{
 /* =======================Login====================== */
 .login{
     width: 45%; 
-}
-form{
-    text-align: center;
 }
 
 .login input{

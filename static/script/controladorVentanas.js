@@ -4,6 +4,7 @@ const $ventanasModales = document.querySelectorAll(".modal")
 const $modalNuevoVuelo = document.getElementById("nuevo-vuelo-1")
 const $fondoModal = document.querySelector(".fondo-modal")
 var tabla = document.querySelectorAll('.tabla tbody')
+verVuelos()
 
 document.getElementById("nav-vuelos").addEventListener("click", function( event ) {
     $ventanaTabla.forEach(tabla=>tabla.classList.add("oculto"))
@@ -11,8 +12,8 @@ document.getElementById("nav-vuelos").addEventListener("click", function( event 
     document.querySelector('.pestanias').classList.remove("oculto")
     $botonesNav.forEach($boton=>$boton.classList.remove('btn-navegador-activo'))
     $botonesNav[0].classList.add('btn-navegador-activo')
-    while (tabla.firstChild) {
-      tabla.removeChild(tabla.firstChild);
+    while (tabla[0].firstChild) {
+      tabla[0].removeChild(tabla[0].firstChild);
   }
     verVuelos()
   }, false);
@@ -55,6 +56,15 @@ document.getElementById("nav-vuelos").addEventListener("click", function( event 
     verAviones()
   }, false);
 
+  /* document.querySelectorAll(".btn_eliminar").forEach(item => {
+    item.addEventListener('click', event => {
+        for(const $check of $document.getElementsByClassName(btn_eliminar).c){
+            $modal.classList.add('oculto')            
+        } 
+        $fondoModal.style.visibility = "hidden";
+    })
+  }) */
+
   //-------------------------------ventana modales-----------------------------------
 
   $modalNuevoVuelo.addEventListener("click", function( event ) {
@@ -90,6 +100,10 @@ document.getElementById("nav-vuelos").addEventListener("click", function( event 
             $modal.classList.add('oculto')            
         } 
         $fondoModal.style.visibility = "hidden";
+        document.getElementById("nuevovuelo").reset();
+        document.getElementById("nuevAerolinea").reset();
+        document.getElementById("nuevoPiloto").reset();
+        document.getElementById("nuevoAvion").reset();
     })
   })
 
@@ -98,7 +112,7 @@ document.getElementById("nav-vuelos").addEventListener("click", function( event 
     try{
       const respost = await fetch('http://127.0.0.1:5000/show/vuelo')
       const res = await respost.json()
-        /* res.forEach((elemento)=>{         
+         res.forEach((elemento)=>{         
           let vuelo = document.createElement('tr')  
 
           console.log(elemento)
@@ -114,17 +128,33 @@ document.getElementById("nav-vuelos").addEventListener("click", function( event 
           vuelo.appendChild(codigo)
 
           let aerolinea = document.createElement("td")
-          aerolinea.appendChild(document.createTextNode(elemento.aerolinea))
+          aerolinea.appendChild(document.createTextNode(elemento[1]))
           vuelo.appendChild(aerolinea)
+
+          let origen = document.createElement("td")
+          origen.appendChild(document.createTextNode(elemento[3]))
+          vuelo.appendChild(origen)
+
+          let dia = document.createElement("td")
+          dia.appendChild(document.createTextNode(elemento[4]))
+          vuelo.appendChild(dia)
+
+          let hora = document.createElement("td")
+          hora.appendChild(document.createTextNode(elemento[5]))
+          vuelo.appendChild(hora)
 
 
           let avion = document.createElement("td")
-          avion.appendChild(document.createTextNode(elemento.avion))
+          avion.appendChild(document.createTextNode(elemento[6]))
           vuelo.appendChild(avion)
 
-          let logo = document.createElement("td")
-          logo.appendChild(document.createTextNode(elemento.logo))
-          vuelo.appendChild(logo)
+          let estado = document.createElement("td")
+          estado.appendChild(document.createTextNode(elemento[7]))
+          vuelo.appendChild(estado)
+
+          let sillas = document.createElement("td")
+          sillas.appendChild(document.createTextNode(elemento[8]))
+          vuelo.appendChild(sillas)
           
           let editador = document.createElement("td")
           vuelo.appendChild(editador)
@@ -132,7 +162,7 @@ document.getElementById("nav-vuelos").addEventListener("click", function( event 
           vuelo.appendChild(eliminador)
 
           tabla[0].appendChild(vuelo)
-      })  */
+      })  
     }catch(error){
       console.log
     }
@@ -307,25 +337,6 @@ document.getElementById("nav-vuelos").addEventListener("click", function( event 
     } 
   }
 
-  async function llenarSelect2($select){
-    console.log($select)
-    try{
-      const respost = await fetch('http://127.0.0.1:5000/show/selector')
-      const res = await respost.json()
-      res.forEach((elemento)=>{
-        console.log(elemento)
-        const option = document.createElement('option');
-        const valor = elemento[0]
-        option.value = valor;
-        option.text = valor;
-        $select.appendChild(option) 
-        console.log($select)
-      }) 
-    }catch(error){
-      console.log(error)
-    } 
-  }
-
   //-------------------------------Nuevos Datos-----------------------------------
 
 /*   const $formNewFly = document.querySelector('#nuevovuelo')
@@ -343,6 +354,12 @@ formNewFly.onsubmit = async (e)=>{
     method: 'POST',
     body: new FormData(formNewFly)
   });
+
+  for(const $modal of $ventanasModales){
+    $modal.classList.add('oculto')            
+  } 
+  $fondoModal.style.visibility = "hidden";
+  document.getElementById("nuevovuelo").reset();
 }
 
 const formNewAirline = document.querySelector("#nuevAerolinea")
@@ -352,17 +369,29 @@ formNewAirline.onsubmit = async (e)=>{
     method: 'POST',
     body: new FormData(formNewAirline)
   });
+
+  for(const $modal of $ventanasModales){
+    $modal.classList.add('oculto')            
+  } 
+  $fondoModal.style.visibility = "hidden";
+  document.getElementById("nuevAerolinea").reset();
+
 }
 
 const formNewPilot = document.querySelector("#nuevoPiloto")
 formNewPilot.onsubmit = async (e)=>{
   e.preventDefault()
-  
-  console.log('dentro del formulario aerolinea')
   let responde = await fetch('http://127.0.0.1:5000/new/piloto',{
     method: 'POST',
     body: new FormData(formNewPilot)
   });
+  for(const $modal of $ventanasModales){
+    $modal.classList.add('oculto')            
+  } 
+  $fondoModal.style.visibility = "hidden";
+  document.getElementById("nuevoPiloto").reset();
+  
+  
 }
 
 const formNewPlane = document.querySelector("#nuevoAvion")
@@ -372,4 +401,9 @@ formNewPlane.onsubmit = async (e)=>{
     method: 'POST',
     body: new FormData(formNewPlane)
   });
+  for(const $modal of $ventanasModales){
+    $modal.classList.add('oculto')            
+  } 
+  $fondoModal.style.visibility = "hidden";
+  document.getElementById("nuevoAvion").reset();
 }

@@ -16,9 +16,13 @@
 h1, h2, h3, h4{
     color: var(--turqui);
 }
-form input{
+#nuevAerolinea input{
+    width: 90%;
+}
+form input, select {
     border:none;
     border-bottom:.1em solid var(--oscuro);
+    width: 40%;
 }
 form input[type="file"]{
     border:none;
@@ -206,7 +210,7 @@ header .datos_usuarios a{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: ;
+    
 }
 .tabla{
     border-collapse: collapse;
@@ -295,10 +299,10 @@ footer p {
 }
 .modal form div{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
 }
-.modal form input{
+.modal form input, select{
     margin: 1em; 
 }
 

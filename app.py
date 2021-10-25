@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 from flaskext.mysql import MySQL
 
+
 app = Flask(__name__)
 mysql = MySQL(app)
 
@@ -58,8 +59,8 @@ def nuevoVuelo():
         request.form.get('dia'),
         request.form.get('hora'),
         request.form.get('avion'),
-        'normal',
-        10
+        request.form.get('estado'),
+        16
         ))
     cursor.connection.commit()
     cursor.fetchall()    
@@ -72,8 +73,20 @@ def mostrarVuelos():
     cursor =conn.cursor()
     cursor.execute("SELECT * FROM vuelos")
     data = cursor.fetchall()
-    print(data)
-    return "bien"
+    #print(data)
+    listaDatos = []
+    for elementData in data:
+       listElement =  list(elementData)
+       listElement[4] = str(listElement[4])
+       listElement[5] = str(listElement[5])
+       listaDatos.append(listElement)
+        
+
+    print(listaDatos[0][4])
+    print(listaDatos[0][5])
+    print(listaDatos)
+    #return listaDatos
+    return jsonify(listaDatos)
 
 #===========================Aerolineas============================
 @app.route('/aerolineas')
