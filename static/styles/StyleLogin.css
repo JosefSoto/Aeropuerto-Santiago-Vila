@@ -32,6 +32,7 @@ h2{
     border-bottom: .1em solid var(--azul);
     font-size: 2em;
     margin-bottom: .5em;
+    
 }
 form{
     display: flex;
@@ -45,41 +46,76 @@ form input{
     background-color:inherit;
     border:none;
     border-bottom:.1em solid var(--oscuro);
-    margin: 1em .5em;
+    margin: 1.5em .5em;
 }
-form input[type="button"], input[type="submit"]{
+.boton{
     background-color: var(--azul);
     border: 1px solid var(--azul);
-    padding: .5em 2em;
-    margin: .2em 1em;
+    padding: .8em 2em;
+    margin: .5em 1em;
     border-radius: 5em;
     text-decoration: none;
     color:var(--gris);
     cursor: pointer;
+    transition: all .3s ease;
 }
-form input[type="button"]:hover, input[type="submit"]:hover{  
+.boton_chico{
+    background-color: var(--azul);
+    border: 1px solid var(--azul);
+    padding: .5em 2em;
+    margin:  1em;
+    border-radius: 5em;
+    text-decoration: none;
+    color:var(--gris);
+    cursor: pointer;
+    transition: all .3s ease;
+
+}
+.boton:hover, .boton_chico:hover{  
     -webkit-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
     -moz-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
     box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
 }
+form input[type="radio"]{
+    display: none;
+}
+form input[type="radio"]:checked + label{
+    background-color: var(--azul);
+    border: 1px solid var(--azul);
+    color:var(--gris);
+    -webkit-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
+    -moz-box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
+    box-shadow: 3px 3px 3px 1px rgba(34,34,34,0.2);
+}
+.btn-equis{    
+    position:absolute;
+    font-size: 3em;
+    
+    left: 93%;
+    cursor: pointer;
+}
 
+.oculto{
+    display: none;
+}
 /* =======================Login====================== */
 .login{
     width: 45%; 
 }
 
-.login input{
-    margin: 2em;
-}
 .submit{
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 2em 0;
 }
-.login form div input{
-    margin-bottom: .2em;
-    margin-top: 3em;
+.mensaje_flash{
+    color:red;
+    width: 100%;
+    display: block;
+    font-size: 1em;
+    margin: auto;
+    text-align: center;
 }
 /* =======================Register====================== */
 .register{
@@ -88,13 +124,22 @@ form input[type="button"]:hover, input[type="submit"]:hover{
 .botones{
     display: flex;
     justify-content: center;
-    margin-bottom: 1em;
-}
-.botones input{
-    width: 10em;
+    align-items: center;
 }
 .textos input{
     width: 45%;
+}
+label{
+    background-color: white;
+    border: 1px solid var(--azul);
+    min-width: 10em;;
+    padding: .5em ;
+    margin: .2em 1em;
+    border-radius: 5em;
+    text-decoration: none;
+    color:var(--azul);
+    cursor: pointer;
+    transition: all 0.3s ease; 
 }
 /* =======================Bienvenida====================== */
 .bienvenida{
@@ -104,36 +149,46 @@ form input[type="button"]:hover, input[type="submit"]:hover{
     background-color: var(--azul);
     height: 100%;
     text-align: center;
-    overflow: hidden;
-    
+    overflow: hidden; 
+    border-radius: 1em 0 0 1em;
+    left: 0;
+    transition: left .5s ease;    
+    color:#fdfffc;
+}
+.bienvenida img{
+    margin: 1em;
+    max-width: 18em;
 }
 .derecha{
     border-radius:0 1em 1em 0;
     left: 50%;
-    animation-name: derecha;
-    animation-duration: .5s;
-    
+    transition: left .5s ease;  
 }
-.izquierda{
-    border-radius: 1em 0 0 1em;
+/* =======================modales====================== */
+.fondo_modal{
+    background-color: rgba(4, 4, 4, .3);;
+    position: fixed;
+    top: 0;
     left: 0;
-    animation-name: izquierda;
-    animation-duration: .5s;
+    width: 100vw;
+    height: 100vh; 
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    visibility: hidden;
 }
-@keyframes derecha{
-    from{
-        left: 0;
-    }
-    to{
-        left: 50%;
-    }
-
+.modal{
+    font-family: 'Roboto', sans-serif;
+    max-width: 50%;
+    background-color: white;
+    padding: 0 2.5em;
+    margin: auto;
+    border-radius: 1.5em;
+    position: relative;
+    text-align: center;
 }
-@keyframes izquierda {
-    from{
-        left: 50%;
-    }
-    to{
-        left: 0;
-    }   
+.modal h3{
+    border-bottom: .1em solid var(--azul);
+    font-size: 1.5em;
+    margin-bottom: .5em;
 }

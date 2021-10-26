@@ -1,26 +1,84 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, session, jsonify, render_template, redirect, url_for, flash
 from flaskext.mysql import MySQL
-
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
+app.secret_key = "kshso24k2309dfjsldfu98w37998"
 mysql = MySQL(app)
 
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = '12345678'
 app.config['MYSQL_DATABASE_DB'] = 'SANTIAGOVILA_BD'
 app.config['MYSQL_DATABASE_Host'] = 'localhost'
-
+    
+#============================== Login ================================
 @app.route('/')
-def saludo():
-    return render_template('dashboard.html')
+@app.route('/dashboard')
+@app.route('/dashboardUser')
+def permisos():
+    if 'nombreUsuario' in session:
+        if session['tipoUsuario'] == 'administrador':
+            return render_template('dashboard.html')
+        elif session['tipoUsuario'] == 'usuario':
+            return render_template('dashboardUser.html')
+    else: 
+        return render_template('login.html')
 
+@app.route('/logout')
+def logout():
+    print('************Estoy en el metodo logout***********')
+    session.clear()
+    return redirect(url_for('permisos')) 
 
-@app.route('/login/')
-def login(nombre, clave):
-    if nombre == 'admin' and clave == 123456:
+def crear_clave(clave):
+    return generate_password_hash(clave)
+
+def verificar_clave(clave, ingresada):
+    return check_password_hash(clave, ingresada)
+
+def comprobarUsuario(usuario, clave):
+    conn = mysql.connect()
+    cursor =conn.cursor()
+    cursor.execute("SELECT Nombre, Correo, Contrasenia, Tipo FROM usuarios WHERE Correo = %s LIMIT 1 ",(usuario))
+    data = cursor.fetchone()
+    if data is not None and verificar_clave( data[2], clave):
+        session['nombreUsuario'] = data[0]
+        session['tipoUsuario'] = data[3]
         return True
     else:
         return False
+
+@app.route('/login', methods=['POST'])
+def login():
+    if request.method == 'POST':
+        usuario = request.form['correo']
+        clave = request.form['clave']
+        print(usuario)
+        print(clave)
+        if comprobarUsuario(usuario, clave):
+            return redirect(url_for('permisos'))
+        else:
+            flash('Información errada verifique y vuelta a intentarlo.')
+            return render_template('login.html')
+        
+@app.route('/new/registro', methods=['GET','POST'])
+def newUser():
+    print(request.form.get('tipo_usuario'))
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute("""INSERT INTO usuarios (Nombre, Correo, Contrasenia, Tipo, Documento, Telefono, Foto)
+                    VALUES (%s,%s,%s,%s,%s,%s,%s)""",(
+                        request.form.get('nombre'),
+                        request.form.get('correo'),
+                        crear_clave(request.form.get('clave')),
+                        request.form.get('tipo_usuario'),
+                        request.form.get('documento'),
+                        request.form.get('telefono'),
+                        request.form.get('foto')
+                        ))
+    cursor.connection.commit()
+    cursor.fetchall()    
+    return render_template('dashboard.html')
 
 #============================Vuelos===============================
 @app.route('/vuelos')
@@ -124,7 +182,6 @@ def mostrarAerolinea():
     data = cursor.fetchall()
     return jsonify(data)
 
-
 #===========================Pilotos===============================
 @app.route('/pilotos')
 def pilotos():
@@ -163,7 +220,6 @@ def mostrarpiloto():
     cursor.execute("SELECT * FROM pilotos")
     data = cursor.fetchall()
     return jsonify(data)
-
 
 #===========================Aviones===============================
 @app.route('/aviones')
@@ -207,7 +263,6 @@ def mostrarAviones():
     cursor.execute("SELECT * FROM aviones")
     data = cursor.fetchall()
     return jsonify(data)
-
 
 #=========================Peticiones SQL==========================  
 
@@ -275,7 +330,6 @@ def actualizar():
     cursor.connection.commit()
     cursor.fetchall()    
     return "<h1>dato actualizado</h1>"
-
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
