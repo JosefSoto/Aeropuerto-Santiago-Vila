@@ -108,7 +108,7 @@ nav ul li{
     width: 100%;;
     padding-left: 1.5em;
 }
-nav ul li a{
+nav li>a{
     text-decoration: none;
     color: white;
     font-size: 1.2em;
@@ -117,7 +117,8 @@ nav ul li a{
     margin: 0 auto;
     align-items: center;
     text-align:center;
-    padding: .5em .3em;   
+    padding: .5em 1.5em; 
+     
 }
 .btn-navegador-activo{
     background-color: var(--gris);
@@ -131,9 +132,7 @@ nav ul li a{
     background-color: #444;
     border-radius: 2em;
 }
-nav ul li a span{
-    margin-left: 1em;   
-}
+
 .principal{
     background-color: var(--gris);
     min-width: 85%;
@@ -162,11 +161,10 @@ header .datos_usuarios a{
     margin-right: 2em;
 }
 .user{
-    text-decoration: none;  
-}
-.datos_usuarios .user{
+    text-decoration: none;
+    position: relative;
     display: flex;
-    align-items: center;
+    align-items: center;  
 }
 .iconoUser{
     width: 2.5em;
@@ -183,13 +181,50 @@ header .datos_usuarios a{
     margin: 0;
     font-size: smaller;
 }
-/* =======================Seccion principal====================== */
+.datos_personales{
+    top: -0.7em;
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    background-color: white;
+    border-top: 0;
+    border-bottom-left-radius: 1em;
+    overflow: hidden;
+    height: 0;
+}
+.datos_personales div{
+    margin: 1em 0;
+    margin-bottom: 0;
+}
+.datos_personales div p{
+    margin: 1em ;
+}
+.datos_personales div:first-child p{
+    text-align: center;    
+    margin: .1em;
+}
+.btn_cerrar_sesion{
+    text-align: center;
+    border: .1em solid var(--turqui);
+    padding: .1em;
+    border-radius: 1em;
+    margin: 0;
+}
+.btn_cerrar_sesion:hover{
+    background-color: var(--naranja); 
+}
+.user .datos_personales_oculto{
+    padding: 1em;
+    padding-bottom: 0;
+    border: .2em solid var(--turqui);
+    height: auto;
+}
+/* ======================= Seccion principal ====================== */
 
 .buscador-tabla{
     width: 95%;
     margin: 1em auto;
-    padding: .5em;
-    
+    padding: .5em;  
 }
 .pestanias a{
     background-color: var(--blanco);
@@ -209,9 +244,14 @@ header .datos_usuarios a{
 }
 .datos-vuelos form{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    
+}
+.datos-vuelos>form input{
+    margin: 1em;
+}
+.datos-vuelos>form>input[type="submit"]{
+    max-width: 8em;    
 }
 .tabla{
     border-collapse: collapse;
@@ -228,21 +268,21 @@ header .datos_usuarios a{
     background-color: var(--naranja);
     color:  #ffffff;
     border-radius: 1em 1em 0 0;
-    
 }
 .tabla td{
     padding: .5em;
 }
+.imagenEditar>img{
+    width: 2em;
+    cursor:pointer;
+}
 .tabla tr{
     text-align: center;
-    
-
 }
 .tabla thead {
     border:.15em solid var(--turqui);   
     border-left: 0 none;
     border-right: 0 none;
-
 }
 .tabla tr:nth-child(even){
     background-color: var(--gris);
@@ -256,7 +296,7 @@ header .datos_usuarios a{
     padding: .5em;   
 }
 
-/* =======================Pie de Pagina====================== */
+/* ======================= Pie de Pagina ====================== */
 
 footer{
     display: flex;
@@ -267,7 +307,7 @@ footer p {
     font-size: .8em;
     color: #bbb;
 }
-/* =======================Modal====================== */
+/* ======================= Modal ====================== */
 
 .fondo-modal{
     background-color: rgba(4, 4, 4, .3);;

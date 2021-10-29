@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/recursos/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../static/styles/normalize.css">
     <link rel="stylesheet" href="../static/styles/StyleLogin.css">
     <title>Login</title>
@@ -13,7 +14,7 @@
         <div class="contenedor">
              <!--===========================Bienvenida==========================-->
              <div class="bienvenida">
-                 <img src="../static/logo/LogoSantiagoVila.png" alt="">
+                 <img src="../static/recursos/logo/LogoSantiagoVila.png" alt="">
                  <h2>Bienvenido</h2>
                  <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse molestias voluptatibus rem. Aperiam delectus recusandae ab esse, sapiente sit rerum soluta veritatis nobis expedita totam rem nemo eos? Aliquam, pariatur!</span><span>At ducimus fugiat qui odio maiores eum fuga perferendis vitae ipsam commodi, corporis animi corrupti! Recusandae labore doloremque ullam optio eaque! Non, dolorem natus possimus aut blanditiis consequatur earum explicabo?</span><span>Reprehenderit perferendis ex distinctio nobis illo veniam perspiciatis eaque rerum tempora aliquid omnis quaerat eum explicabo, eos ab vitae commodi mollitia libero soluta quasi, sed aspernatur dolor. Voluptas, laborum omnis?</span></p>  
              </div>
@@ -50,16 +51,18 @@
             <div class="login">
                 <h2>Login</h2>
                 {% with mensaje = get_flashed_messages() %}
-                    {%if mensaje%}
-                        <p class="mensaje_flash">{{ mensaje }}</p>
-                    {%endif%}
-                {%endwith%}
+                    <div class="area_notificaciones">
+                        {%if mensaje%}
+                                <p class="mensaje_flash">{{ mensaje }}</p>
+                        {%endif%}
+                    </div>
+                {%endwith%}                
                 <form action="/login" method="POST">
                     <input type="text" placeholder="Correo" name="correo">
                     <input type="password" placeholder="Contraseña" name="clave">
                     <div class="submit" >
                         <input type="submit" class="boton">
-                        <a href="#" class="conmutador">Quiero registrarme</a>
+                        <p>¿No tienes cuenta? <a href="#" class="conmutador">Registrate</a></p>
                     </div>
                 </form>
             </div>
