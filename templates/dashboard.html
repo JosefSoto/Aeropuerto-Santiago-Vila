@@ -30,28 +30,33 @@
                 <div class="buscador">
                     <input type="search" placeholder="Buscar" class="campo-buscar">
                 </div>
-                <div class="datos_usuarios">                    
-                    <a href="#" class="user">
-                        <img src="#" alt="" class="iconoUser">
+                <details class="datos_usuarios datos_personales_oculto">
+                    <summary class="user">                  
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99.994" height="99.994" viewBox="0 0 512 512" class="iconoUser">
+                            <image id="Capa_1" data-name="Capa 1" width="512" height="512" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEwklEQVR4nO2dW4hVZRSAvzmjM5mXmsYmLLIxJrpKCJUvpkENIagPPdiDCL5pvUQv9RQ99BDlQ2W+RHR5KMiHChGlJrqAqGgkaSopUngrs+kyTYXd5sSf68DpcEbP2Z5/7fXvvT5Y7HmRdfb69sX9/2v/u4u0mAMMAncBC4CbgAHgMqAbGAO+B74C9gKfAoeBk4ntp2lmASuAbcCfQLXN+AfYDawBri57MS+GcCY8CfyYQcJkEYRuBO5Mtyz58HjGs6GdWA9cXsbitsMiYH9kEfVxGlidTnl0eURRRGNsKFOhW2FDjjJqMWK/TDq8akBGLXaWoeDnw8KZ0Rjv2i1XXB42KKMWrxS58M1YYFhGLdbYK1s8jicgpCpDMoXnsURkhNhcdBkDMraUipCq9jBLRTOZPPxp57xYntZMpjn83gOMyzY15gInNH6z5tF6b6IyAusM/IaO82Fi9476+D3hg6kpfQnLqMV8jUJpXbJuUcoTk8UaSbSE3KGUJyb3ayRxIa1zrUYSLSG3KuWJicp0r5aQPqU8MZkGTI2dREPIJdLKkzq9ElHREFJJcLikGRWNkQ2NQoWHql8U8sTmD4moaB25RRByVnrFoqIl5IhSnpiMaSTREvKZUp6YnNZIoiVkj1KemHyskURLyH6lPDH5oAD78D++SHy0d6ZGkTSfD9Yr5uo0r8lsZ6GYmfDZcVvRZNR4PUEZ+2yULg5DCQpZXkQR9byYkIxddsoWjzBi+lsiQq4vqoRGHkhAxjO2ShYfy5culadyi7xvUMZBYHpZhSCvkVmRccZflT7HZiNnxlUWimGFl3OUMSJNDE4DD8mUr6aMZ13C+Qmt/28oiHhPVhVyWiS0br4TQcQOYJVLyE4YaX1KplCzSvgVeAlYaH1nU1rArFdeCQh9wvfJpa1fnhl6ZW7nrNyDfgZOAduBT4CjwA8G9uGCpLaiXDN6pMUz7MtfGr1TjuM4juM4juM4RSLVB8MZ8mQelhefItuwL3/LakMhJqSZYsLA720Za0LmSe9Wv3Q6zgaulFeS+2Q2b7Zsu+tel+uWfz9RJ6Mq73SMAj/J36dkTGxUWkNHZVGZL62Iy0tIv4xJDcoC+7fLIOJQTr8nLNZ/QLoUT8iKd/tkq4qWkHDkD8tiYEMyD3Gp9s5mYI+8/RVep9gKHIqdMKaQYWnDDCO090TMo0n4/MXnwEfAJrksmmZY+q0012/PK76W5WQftPbad7gfPCE3xqJLmCyOyYE4L08R82Xue7zEIhpjQpr/lmiKCAvJvOnFv2CEmcq7Y4oIzwHPeaHbjrfkW1kdJdy4vvXiZo5wKXu0U0Je8IJ2LLbISEMm5sj/u8texE7HmSyrZd8IfOfFixahO2ZpqzKuk9V7yl40jVjWWPzGoZMe+UrmNVmvc07b3CwP1f/R+Mj/tstQZ2SyoZfVfgnJLTbWJHTVbce0FlhxmhIm4U7WTpW1LiN3nkfOjCkylVmK7y0ZZ6Aio7YuwwYrKlqLzDstsbJSoOnVIjAYhNxQ9ioYYlYQckXZq2CIaRWNFf+dlumupNZqWXCqRfhqQaFwIcZwIcZwIcZwIcZwIcZwIcZwIcZwIcZwIcZwIcbokk4LxwhhPv0bb3AwAoz/CxxnFH474ebdAAAAAElFTkSuQmCC"/>
+                        </svg>
                         <span>
-                            <h4>Nombre Usuario</h4>
-                            <p>Administrador</p>
-                        </span>
-                        <div class="datos_personales .datos_personales_oculto">
-                            <div>
-                                <img src="" alt="">
-                                <p>Nombre Usuario</p>
-                                <p>Administrador</p>
+                            <h4 id="header_username">Nombre Usuario</h4>
+                            <p id="header_kind">Administrador</p>
+                        </span>                    
+                    </summary>
+                        <div class="datos_personales">
+                            <div class="datos_personales_cabecera">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="99.994" height="99.994" viewBox="0 0 512 512" class="iconoUserGrande">
+                                    <image id="Capa_1" data-name="Capa 1" width="512" height="512" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEwklEQVR4nO2dW4hVZRSAvzmjM5mXmsYmLLIxJrpKCJUvpkENIagPPdiDCL5pvUQv9RQ99BDlQ2W+RHR5KMiHChGlJrqAqGgkaSopUngrs+kyTYXd5sSf68DpcEbP2Z5/7fXvvT5Y7HmRdfb69sX9/2v/u4u0mAMMAncBC4CbgAHgMqAbGAO+B74C9gKfAoeBk4ntp2lmASuAbcCfQLXN+AfYDawBri57MS+GcCY8CfyYQcJkEYRuBO5Mtyz58HjGs6GdWA9cXsbitsMiYH9kEfVxGlidTnl0eURRRGNsKFOhW2FDjjJqMWK/TDq8akBGLXaWoeDnw8KZ0Rjv2i1XXB42KKMWrxS58M1YYFhGLdbYK1s8jicgpCpDMoXnsURkhNhcdBkDMraUipCq9jBLRTOZPPxp57xYntZMpjn83gOMyzY15gInNH6z5tF6b6IyAusM/IaO82Fi9476+D3hg6kpfQnLqMV8jUJpXbJuUcoTk8UaSbSE3KGUJyb3ayRxIa1zrUYSLSG3KuWJicp0r5aQPqU8MZkGTI2dREPIJdLKkzq9ElHREFJJcLikGRWNkQ2NQoWHql8U8sTmD4moaB25RRByVnrFoqIl5IhSnpiMaSTREvKZUp6YnNZIoiVkj1KemHyskURLyH6lPDH5oAD78D++SHy0d6ZGkTSfD9Yr5uo0r8lsZ6GYmfDZcVvRZNR4PUEZ+2yULg5DCQpZXkQR9byYkIxddsoWjzBi+lsiQq4vqoRGHkhAxjO2ShYfy5culadyi7xvUMZBYHpZhSCvkVmRccZflT7HZiNnxlUWimGFl3OUMSJNDE4DD8mUr6aMZ13C+Qmt/28oiHhPVhVyWiS0br4TQcQOYJVLyE4YaX1KplCzSvgVeAlYaH1nU1rArFdeCQh9wvfJpa1fnhl6ZW7nrNyDfgZOAduBT4CjwA8G9uGCpLaiXDN6pMUz7MtfGr1TjuM4juM4juM4RSLVB8MZ8mQelhefItuwL3/LakMhJqSZYsLA720Za0LmSe9Wv3Q6zgaulFeS+2Q2b7Zsu+tel+uWfz9RJ6Mq73SMAj/J36dkTGxUWkNHZVGZL62Iy0tIv4xJDcoC+7fLIOJQTr8nLNZ/QLoUT8iKd/tkq4qWkHDkD8tiYEMyD3Gp9s5mYI+8/RVep9gKHIqdMKaQYWnDDCO090TMo0n4/MXnwEfAJrksmmZY+q0012/PK76W5WQftPbad7gfPCE3xqJLmCyOyYE4L08R82Xue7zEIhpjQpr/lmiKCAvJvOnFv2CEmcq7Y4oIzwHPeaHbjrfkW1kdJdy4vvXiZo5wKXu0U0Je8IJ2LLbISEMm5sj/u8texE7HmSyrZd8IfOfFixahO2ZpqzKuk9V7yl40jVjWWPzGoZMe+UrmNVmvc07b3CwP1f/R+Mj/tstQZ2SyoZfVfgnJLTbWJHTVbce0FlhxmhIm4U7WTpW1LiN3nkfOjCkylVmK7y0ZZ6Aio7YuwwYrKlqLzDstsbJSoOnVIjAYhNxQ9ioYYlYQckXZq2CIaRWNFf+dlumupNZqWXCqRfhqQaFwIcZwIcZwIcZwIcZwIcZwIcZwIcZwIcZwIcZwIcbokk4LxwhhPv0bb3AwAoz/CxxnFH474ebdAAAAAElFTkSuQmCC"/>
+                                </svg>
+                                <p id="dropdown_username">Nombre Usuario</p>
+                                <span id="dropdown_kind">Administrador</p>
                             </div>
-                            <div class="div">
-                                <p>Correo@email.com:</p>
-                                <p>Documento</p>
-                                <p>Telefono</p>
-                                <div><p class="btn_cerrar_sesion">Cerrar sesión</p></div>
-                            </div>                                                    
+                            <p id="dropdown_email">Correo@email.com:</p>
+                            <p id="dropdown_id">Documento</p>
+                            <p id="dropdown_phone">Telefono</p>
+
+                            <a class="btn_cerrar_sesion" href="/logout" >Cerrar sesión</a>
+                                                                            
                         </div>
-                    </a>                    
-                </div>
+                                        
+                </details>
             </header>
         <!--=========================Buscador y tabla de resultados=====================-->
             <section class="buscador-tabla">
@@ -203,7 +208,7 @@
                     <h2>Editar Vuelo</h2>
                     <form  id="editar-vuelo">                        
                         <div class="modal-1">
-                            <input type="text" placeholder="Vuelo" name="vuelo" id="editar_vuelo_vuelo">                            
+                            <input type="text" placeholder="Vuelo" name="vuelo" id="editar_vuelo_vuelo" readonly >                            
                             <input type="text" placeholder="Destino" name="destino" id="editar_vuelo_destino">
                         </div>
                         <div class="modal-2">
@@ -270,7 +275,7 @@
                     </div>
                     <form id="editar-aerolinea">
                         <h2>Editar Aerolinea</h2>
-                        <input type="text" placeholder="Nombre" name="nombre" id="editar_aerolinea_nombre">
+                        <input type="text" placeholder="Nombre" name="nombre" id="editar_aerolinea_nombre" readonly >
                         <input type="text" placeholder="Codigo" name="codigo" id="editar_aerolinea_codigo">
                         <input type="text" placeholder="Aviones" name="aviones" id="editar_aerolinea_aviones">
                         <input type="file" aria-label="Archivo" name="logo">
@@ -307,7 +312,7 @@
                             <input type="text" placeholder="Apellido" name="apellido" id="editar_piloto_apellido">
                         </div>
                         <div>
-                            <input type="text" placeholder="Documento" name="documento" id="editar_piloto_documento">
+                            <input type="text" placeholder="Documento" name="documento" id="editar_piloto_documento" readonly >
                             <input type="tel" placeholder="Telefono" name="telefono" id="editar_piloto_telefono">
                         </div>                          
                         <select name="aerolinea" id="editar_piloto_aerolinea">  
@@ -346,18 +351,17 @@
                     <div class="btn-equis">
                         &times;
                     </div>
-                    <form action="">
+                    <form id="editar-aviones">
                         <h2>Editar Avión</h2>
                         <div class="modal-1">
-                            <input type="text" placeholder="Avion" name="avion">
-                            <select id="selectAerolinea" name="aerolinea"></select>
-                            
+                            <input type="text" placeholder="Avion" name="avion" id="editar_aviones_codigo" readonly>
+                            <select  name="aerolinea" id="editar_aviones_aerolinea"></select>
                         </div>
                         <div class="modal-2">
-                            <input type="text" placeholder="Fabricante">
-                            <input type="text" placeholder="Modelo" name="modelo">                            
+                            <input type="text" placeholder="Fabricante" name="fabricante" id="editar_aviones_fabricante">
+                            <input type="text" placeholder="Modelo" name="modelo" id="editar_aviones_modelo">                            
                         </div>
-                        <input type="text" placeholder="Sillas">                    
+                        <input type="text" placeholder="Sillas" name="sillas" id="editar_aviones_silla">                    
                         <span class="botonera">
                             <input type="reset" value="Descartar" class="boton">
                             <input type="submit" value="Guardar cambios" class="boton">
@@ -373,7 +377,6 @@
                         <div class="modal-1">
                             <input type="text" placeholder="Avion" name="avion">
                             <select id="avionSelectAerolinea" name="aerolinea"></select>
-                            
                         </div>
                         <div class="modal-2">
                             <input type="text" placeholder="Fabricante" name="fabricante">
@@ -387,7 +390,6 @@
                     </form>
                 </div>
             </div>
-
             <footer>
                 <p>Hecho por : &copy; Jose F Soto</p>
             </footer>

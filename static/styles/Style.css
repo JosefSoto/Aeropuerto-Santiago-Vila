@@ -153,24 +153,31 @@ header h1{
     color: var(--oscuro);
 }
 header .datos_usuarios{
+    min-width: 14.5em;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 header .datos_usuarios a{
-    margin-right: 2em;
+    margin-right:1em;
 }
 .user{
-    text-decoration: none;
-    position: relative;
     display: flex;
     align-items: center;  
+    cursor: pointer;
 }
 .iconoUser{
-    width: 2.5em;
+    position: relative;
+    width: 3em;
+    height: 3em;
     border: 1px solid black;
     border-radius: 50%;
     margin-right: .5em;
+}
+.iconoUserGrande{
+    border: 1px solid black;
+    border-radius: 50%;
+    margin: auto;
 }
 .user span h4{
     color: black;
@@ -182,42 +189,52 @@ header .datos_usuarios a{
     font-size: smaller;
 }
 .datos_personales{
-    top: -0.7em;
+    min-width: 12em;
+    padding: 1em;
+    position: absolute;
+    background-color: var(--blanco);
     display: flex;
-    flex-direction: column;
-    position:absolute;
-    background-color: white;
+    flex-direction:column;
+    flex-wrap: wrap;
+    border:.1em solid var(--turqui);
     border-top: 0;
-    border-bottom-left-radius: 1em;
-    overflow: hidden;
-    height: 0;
+    border-bottom-left-radius: 1em;    
 }
-.datos_personales div{
-    margin: 1em 0;
-    margin-bottom: 0;
+.datos_personales_cabecera{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: .5em;
+    text-align: center;
 }
-.datos_personales div p{
-    margin: 1em ;
-}
-.datos_personales div:first-child p{
+
+
+.datos_personales div:first-child p{ 
     text-align: center;    
     margin: .1em;
 }
+#dropdown_username{
+    font-size: 1.5em;
+    font-weight: bold;
+}
 .btn_cerrar_sesion{
     text-align: center;
+    color: var(--turqui);
     border: .1em solid var(--turqui);
-    padding: .1em;
+    padding: .2em;
     border-radius: 1em;
-    margin: 0;
+    margin: 1em;
+    text-decoration: none;
 }
 .btn_cerrar_sesion:hover{
-    background-color: var(--naranja); 
+    background-color: var(--naranja);
+   
+
 }
 .user .datos_personales_oculto{
-    padding: 1em;
-    padding-bottom: 0;
-    border: .2em solid var(--turqui);
-    height: auto;
+    padding: 0;
+    border: 0;
+    height: 0;
 }
 /* ======================= Seccion principal ====================== */
 

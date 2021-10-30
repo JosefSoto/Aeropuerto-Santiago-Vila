@@ -43,6 +43,7 @@ def comprobarUsuario(usuario, clave):
     data = cursor.fetchone()
     if data is not None and verificar_clave( data[2], clave):
         session['nombreUsuario'] = data[0]
+        session['correoUsuario'] = data[1]
         session['tipoUsuario'] = data[3]
         return True
     else:
@@ -196,8 +197,11 @@ def mostrarAerolinea():
 
 @app.route('/update/aerolinea',methods=['GET','POST'])
 def actualizarAerolinea():
+    print(' dentro de flask peticon aerolinea')
     peticion = """UPDATE aerolineas SET Codigo = %s, Aviones = %s WHERE Nombre = %s """  
     valores = ( request.form.get('codigo'), request.form.get('aviones'), request.form.get('nombre') )
+    print(peticion)
+    print(valores)
     conn = mysql.connect()
     cursor =conn.cursor()
     cursor.execute(peticion, valores)
@@ -308,17 +312,40 @@ def mostrarAviones():
     data = cursor.fetchall()
     return jsonify(data)
 
-#=========================Peticiones SQL==========================  
-
-@app.route('/ss',methods=['GET'])
-def ss():
-    return jsonify({'nombre' : 'jose'})
-
-@app.route('/show')
-def mostrar():
+@app.route('/update/aviones',methods=['GET','POST'])
+def actualizarAviones():
+    print(' dentro de flask peticon aviones')
+    peticion = """UPDATE aviones SET 
+        Aerolinea = %s, 
+        Fabricante = %s,
+        Modelo = %s, 
+        Sillas = %s
+        WHERE Codigo = %s """  
+    valores = ( 
+        request.form.get('aerolinea'), 
+        request.form.get('fabricante'),
+        request.form.get('modelo'), 
+        request.form.get('sillas'),  
+        request.form.get('avion') )
+    print(peticion)
+    print(valores)
     conn = mysql.connect()
     cursor =conn.cursor()
-    cursor.execute("SELECT * FROM datos")
+    cursor.execute(peticion, valores)
+    cursor.connection.commit()
+    cursor.fetchall()    
+    return "<h1>dato actualizado</h1>"
+
+#=========================Peticiones SQL==========================  
+
+@app.route('/datosUsuario')
+def mostrar():    
+    conn = mysql.connect()
+    cursor =conn.cursor()
+    cursor.execute("SELECT Nombre, Correo, Tipo, Documento, Telefono FROM usuarios WHERE Correo = %s LIMIT 1 ",
+    (session['correoUsuario']))
+    print(session['correoUsuario'])
+    
     data = cursor.fetchall()
     return jsonify(data)
     
@@ -369,7 +396,7 @@ def pruebasPeticiones():
         'vuelos':'codigo',
         'aerolineas':'Nombre',
         'pilotos': 'Documento',
-        'aviones': 'Codigo'} 
+        'aviones': 'codigo'} 
     peticionJS = request.get_json()
     conn = mysql.connect()
     cursor =conn.cursor()

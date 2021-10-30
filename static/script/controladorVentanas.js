@@ -4,7 +4,26 @@ const $ventanasModales = document.querySelectorAll(".modal")
 const $modalNuevoVuelo = document.getElementById("nuevo-vuelo-1")
 const $fondoModal = document.querySelector(".fondo-modal")
 var tabla = document.querySelectorAll('.tabla')
+//-------------------------------cargar datos usuario-----------------------------------
+window.onload = async function() {
+  try{
+    const respost = await fetch('/datosUsuario')
+    const res = await respost.json()
+    document.querySelector('#header_username').innerText= res[0][0]
+    document.querySelector('#dropdown_username').innerText= res[0][0]
+    document.querySelector('#dropdown_email').innerText= res[0][1]
+    document.querySelector('#dropdown_id').innerText= res[0][3]
+    document.querySelector('#dropdown_phone').innerText= res[0][4]
+    console.log(res)
+     
+  }catch(error){
+    console.log
+  }
+};
 verVuelos()
+//-------------------------------ventana Navegacion-----------------------------------
+
+
 
 document.getElementById("nav-vuelos").addEventListener("click", function( event ) {
     $ventanaTabla.forEach(tabla=>tabla.classList.add("oculto"))
@@ -156,8 +175,7 @@ async function verVuelos() {
         newTbody.appendChild(vuelo)
     })
     const oldTbody = tabla[0].querySelector("tbody")
-    tabla[0].replaceChild(newTbody, oldTbody) 
-    console.log(document.querySelectorAll('.imagenEditar')) 
+    tabla[0].replaceChild(newTbody, oldTbody)
   }catch(error){
     console.log
   }
@@ -318,8 +336,19 @@ async function verAviones() {
       sillas.appendChild(document.createTextNode(elemento[4]))
       listAviones.appendChild(sillas)
 
+      
+      let funcionllamada = "pruebaDeClickAvion("+contador+")"
       let editador = document.createElement("td")
+      let btnEdicion = document.createElement("button")
+      let imagen = document.createElement("img")
+      imagen.setAttribute("src", "../static/recursos/editarIcono.png")
+      btnEdicion.setAttribute("onclick", funcionllamada)
+      btnEdicion.setAttribute("id", contador)
+      btnEdicion.classList.add("imagenEditar")
+      btnEdicion.appendChild(imagen)
+      editador.appendChild(btnEdicion)      
       listAviones.appendChild(editador)
+      
       let eliminador = document.createElement("td") 
       listAviones.appendChild(eliminador)
 
@@ -388,6 +417,7 @@ formNewFly.onsubmit = async (e)=>{
   } 
   $fondoModal.style.visibility = "hidden";
   document.getElementById("nuevovuelo").reset();
+  verVuelos()
 }
 
 const formNewAirline = document.querySelector("#nuevAerolinea")
@@ -403,6 +433,7 @@ formNewAirline.onsubmit = async (e)=>{
   } 
   $fondoModal.style.visibility = "hidden";
   document.getElementById("nuevAerolinea").reset();
+  verAerolineas()
 
 }
 
@@ -418,7 +449,7 @@ formNewPilot.onsubmit = async (e)=>{
   } 
   $fondoModal.style.visibility = "hidden";
   document.getElementById("nuevoPiloto").reset();
-   
+  verPilotos()  
 }
 
 const formNewPlane = document.querySelector("#nuevoAvion")
@@ -433,6 +464,7 @@ formNewPlane.onsubmit = async (e)=>{
   } 
   $fondoModal.style.visibility = "hidden";
   document.getElementById("nuevoAvion").reset();
+  verAviones()
 }
 
 //-------------------------------Eliminar celdas-----------------------------------
@@ -440,13 +472,14 @@ document.querySelectorAll('.btn_eliminar').forEach(btnEliminar => {
   btnEliminar.addEventListener('click', function(){
     document.querySelectorAll('td>input[type="checkbox"]').forEach(item =>{
       if(item.checked){
-      let  keyceld = item.parentElement.nextElementSibling
-      console.log(keyceld)
-      console.log(keyceld.innerText)
-      console.log(keyceld.dataset.tabla)
+      let  keyceld = item.parentElement.nextElementSibling      
       peticionDePrueba(keyceld.dataset.tabla, keyceld.innerText)
       }      
     })
+    verAerolineas()
+    verVuelos()
+    verPilotos()
+    verAviones()
   })
 })
 
@@ -473,9 +506,6 @@ function pruebaDeClick(contador){
   llenarSelect(document.getElementById("editar_vuelo_aerolinea"))
   llenarSelectAvion(document.getElementById("editar_vuelo_avion"))
   
-  fila.forEach(celda=>{
-    console.log(celda)
-  })
   document.getElementById('editar_vuelo_vuelo').value = fila[1].innerText
   document.getElementById('editar_vuelo_aerolinea').value = fila[2].innerText
   document.getElementById('editar_vuelo_destino').value = fila[3].innerText
@@ -491,7 +521,6 @@ function pruebaDeClick(contador){
 const formUpdateFly = document.querySelector("#editar-vuelo")
 formUpdateFly.onsubmit = async (e)=>{
   e.preventDefault()
-  console.log('dentro del evento click del vuelo')
   let responde = await fetch('http://127.0.0.1:5000/Update/vuelo',{
     method: 'POST',
     body: new FormData(formUpdateFly)
@@ -501,15 +530,13 @@ formUpdateFly.onsubmit = async (e)=>{
     $modal.classList.add('oculto')            
   } 
   $fondoModal.style.visibility = "hidden";
+  verVuelos()
   
 }
 
 function pruebaDeClickAero(contador){
   let fila = document.getElementById(contador).parentNode.parentNode.childNodes
-    
-  fila.forEach(celda=>{
-    console.log(celda)
-  })
+   
   document.getElementById('editar_aerolinea_nombre').value = fila[1].innerText
   document.getElementById('editar_aerolinea_codigo').value = fila[2].innerText
   document.getElementById('editar_aerolinea_aviones').value = fila[3].innerText
@@ -522,7 +549,6 @@ function pruebaDeClickAero(contador){
 const formUpdateAirline = document.querySelector("#editar-aerolinea")
 formUpdateAirline.onsubmit = async (e)=>{
   e.preventDefault()
-  console.log('dentro del evento click del vuelo')
   let responde = await fetch('http://127.0.0.1:5000/update/aerolinea',{
     method: 'POST',
     body: new FormData(formUpdateAirline)
@@ -532,31 +558,26 @@ formUpdateAirline.onsubmit = async (e)=>{
     $modal.classList.add('oculto')            
   } 
   $fondoModal.style.visibility = "hidden";
-  
+  verAerolineas()
 }
 
 function pruebaDeClickPiloto(contador){
   let fila = document.getElementById(contador).parentNode.parentNode.childNodes
   llenarSelect(document.getElementById("editar_piloto_aerolinea"))
-  fila.forEach(celda=>{
-    console.log(celda)
-  })
+  
   document.getElementById('editar_piloto_nombre').value = fila[2].innerText
   document.getElementById('editar_piloto_apellido').value = fila[3].innerText
   document.getElementById('editar_piloto_documento').value = fila[1].innerText
   document.getElementById('editar_piloto_telefono').value = fila[5].innerText
   document.getElementById('editar_piloto_aerolinea').value = fila[4].innerText
   
-  
   $fondoModal.style.visibility = "visible";
   $ventanasModales[4].classList.remove("oculto")
-  
 }
 
 const formUpdatePilot = document.querySelector("#editar-pilotos")
 formUpdatePilot.onsubmit = async (e)=>{
   e.preventDefault()
-  console.log('dentro del evento click del vuelo')
   let responde = await fetch('http://127.0.0.1:5000/update/pilotos',{
     method: 'POST',
     body: new FormData(formUpdatePilot)
@@ -566,5 +587,37 @@ formUpdatePilot.onsubmit = async (e)=>{
     $modal.classList.add('oculto')            
   } 
   $fondoModal.style.visibility = "hidden";
+  verPilotos()
+  
+}
+
+function pruebaDeClickAvion(contador){
+  let fila = document.getElementById(contador).parentNode.parentNode.childNodes
+  llenarSelect(document.getElementById("editar_aviones_aerolinea"))
+  
+  document.getElementById('editar_aviones_codigo').value = fila[1].innerText
+  document.getElementById('editar_aviones_aerolinea').value = fila[4].innerText
+  document.getElementById('editar_aviones_fabricante').value = fila[2].innerText
+  document.getElementById('editar_aviones_modelo').value = fila[3].innerText
+  document.getElementById('editar_aviones_silla').value = fila[5].innerText
+  
+  $fondoModal.style.visibility = "visible";
+  $ventanasModales[6].classList.remove("oculto")
+  
+}
+
+const formUpdateAviones = document.querySelector("#editar-aviones")
+formUpdateAviones.onsubmit = async (e)=>{
+  e.preventDefault()
+  let responde = await fetch('http://127.0.0.1:5000/update/aviones',{
+    method: 'POST',
+    body: new FormData(formUpdateAviones)
+  });
+
+  for(const $modal of $ventanasModales){
+    $modal.classList.add('oculto')            
+  } 
+  $fondoModal.style.visibility = "hidden";
+  verAviones()
   
 }
