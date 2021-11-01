@@ -9,7 +9,7 @@ const formNewRegister = document.querySelector("#registro")
 formNewRegister.onsubmit = async (e)=>{
   e.preventDefault()
   console.log('dentro del evento click del vuelo')
-  let responde = await fetch('http://127.0.0.1:5000/new/registro',{
+  let responde = await fetch('/new/registro',{
     method: 'POST',
     body: new FormData(formNewRegister)
   });

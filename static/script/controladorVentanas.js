@@ -110,7 +110,7 @@ document.querySelectorAll(".btn-equis").forEach(item => {
 //-------------------------------Cargar tablas-----------------------------------
 async function verVuelos() {
   try{
-    const respost = await fetch('http://127.0.0.1:5000/show/vuelo')
+    const respost = await fetch('/show/vuelo')
     const res = await respost.json()
     let contador = 0
     let newTbody = document.createElement("tbody");
@@ -183,7 +183,7 @@ async function verVuelos() {
 
 async function verAerolineas() {
   try{
-    const respost = await fetch('http://127.0.0.1:5000/show/aerolinea')
+    const respost = await fetch('/show/aerolinea')
     const res = await respost.json()
     let newTbody = document.createElement('tbody');
     let contador = 100
@@ -240,7 +240,7 @@ async function verAerolineas() {
 
 async function verPilotos() {
   try{
-    const respost = await fetch('http://127.0.0.1:5000/show/piloto')
+    const respost = await fetch('/show/piloto')
     const res = await respost.json()
     let newTbody = document.createElement('tbody');
     let contador = 200
@@ -301,7 +301,7 @@ async function verPilotos() {
 
 async function verAviones() {
   try{
-    const respost = await fetch('http://127.0.0.1:5000/show/aviones')
+    const respost = await fetch('/show/aviones')
     const res = await respost.json()
     let newTbody = document.createElement('tbody');
     let contador = 300
@@ -366,7 +366,7 @@ async function llenarSelect($select){
     $select.removeChild($select.firstChild);
   }
   try{
-    const respost = await fetch('http://127.0.0.1:5000/show/selector')
+    const respost = await fetch('/show/selector')
     const res = await respost.json()
     res.forEach((elemento)=>{
       const option = document.createElement('option');
@@ -385,7 +385,7 @@ async function llenarSelectAvion($select){
     $select.removeChild($select.firstChild);
   }
   try{
-    const respost = await fetch('http://127.0.0.1:5000/show/selector/avion')
+    const respost = await fetch('/show/selector/avion')
     const res = await respost.json()
     res.forEach((elemento)=>{
       console.log(elemento)
@@ -407,7 +407,7 @@ const formNewFly = document.querySelector("#nuevovuelo")
 formNewFly.onsubmit = async (e)=>{
   e.preventDefault()
   console.log('dentro del evento click del vuelo')
-  let responde = await fetch('http://127.0.0.1:5000/new/vuelo',{
+  let responde = await fetch('/new/vuelo',{
     method: 'POST',
     body: new FormData(formNewFly)
   });
@@ -423,7 +423,7 @@ formNewFly.onsubmit = async (e)=>{
 const formNewAirline = document.querySelector("#nuevAerolinea")
 formNewAirline.onsubmit = async (e)=>{
   e.preventDefault()
-    let responde = await fetch('http://127.0.0.1:5000/new/aerolinea',{
+    let responde = await fetch('/new/aerolinea',{
     method: 'POST',
     body: new FormData(formNewAirline)
   });
@@ -440,7 +440,7 @@ formNewAirline.onsubmit = async (e)=>{
 const formNewPilot = document.querySelector("#nuevoPiloto")
 formNewPilot.onsubmit = async (e)=>{
   e.preventDefault()
-  let responde = await fetch('http://127.0.0.1:5000/new/piloto',{
+  let responde = await fetch('/new/piloto',{
     method: 'POST',
     body: new FormData(formNewPilot)
   });
@@ -455,7 +455,7 @@ formNewPilot.onsubmit = async (e)=>{
 const formNewPlane = document.querySelector("#nuevoAvion")
 formNewPlane.onsubmit = async (e)=>{
   e.preventDefault()  
-  let responde = await fetch('http://127.0.0.1:5000/new/avion',{
+  let responde = await fetch('/new/avion',{
     method: 'POST',
     body: new FormData(formNewPlane)
   });
@@ -491,7 +491,7 @@ async function peticionDePrueba(peticionTabla, peticionCodigo ){
         headers: {'Content-Type': 'application/json'}, 
         body: JSON.stringify(datos) 
       }; 
-      var response = await fetch('http://127.0.0.1:5000/prueba', init);
+      var response = await fetch('/prueba', init);
       console.log(response)
   } catch (err) {
       console.log("Error al realizar la petición AJAX: " + err.message);
